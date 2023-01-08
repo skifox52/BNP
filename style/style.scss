@@ -1,0 +1,139 @@
+$primary-green: #014e2b;
+$secondary-green: #52ba96;
+$primary-orange: #ff6900;
+$primary-yellow: #fcb900;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  font-size: 16px;
+  font-family: "Tajawal", sans-serif;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+header {
+  /* position: relative; */
+  height: 100vw;
+  height: 100vh;
+}
+.nav-bar {
+  position: fixed;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  height: 12.5%;
+  width: 80%;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+#logo {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient($primary-green, $secondary-green, $primary-green);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 15%;
+  // background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nav-bar-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .upper-nav {
+    display: flex;
+    // background: rgba(1, 78, 43, 0.8);
+    background: linear-gradient($primary-green, $secondary-green);
+    justify-content: space-between;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    .search-bar {
+      position: relative;
+      width: 30%;
+      @include flex-center();
+      overflow: hidden;
+      input {
+        color: black;
+        height: 80%;
+        width: 70%;
+        background: white;
+        font-size: 1.05em;
+        padding-inline: 1em;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        color: rgba(0, 0, 0, 0.9);
+        transition: transform 200ms ease-in-out;
+        &::placeholder {
+          color: rgba(0, 0, 0, 0.25);
+          font-weight: 200;
+        }
+      }
+      svg {
+        cursor: pointer;
+        height: 30px;
+        position: absolute;
+        fill: rgba(255, 255, 255, 0.8);
+        right: 1em;
+        transition: all 150ms ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+          fill: white;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      height: 100%;
+      width: 40%;
+      justify-content: space-around;
+      li {
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border-inline: 1px solid rgba(0, 0, 0, 0.1);
+        @include flex-center();
+        cursor: pointer;
+        // transition: all 150ms ease-in;
+        &:hover {
+          background: linear-gradient($secondary-green, $primary-green);
+        }
+      }
+    }
+  }
+  .lower-nav {
+    height: 100%;
+    background: linear-gradient($secondary-green, $primary-green);
+
+    ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+  }
+}

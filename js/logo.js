@@ -18,13 +18,13 @@ const renderer = new THREE.WebGL1Renderer({
 })
 
 renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setSize(sizes.width, sizes.height)
+renderer.setSize(sizes.width / 8, sizes.height / 8)
 camera.position.setZ(30)
 renderer.render(scene, camera)
 const geometry = new RoundedBoxGeometry(
-  sizes.width / 200,
-  sizes.width / 200,
-  sizes.width / 200,
+  sizes.width / 100,
+  sizes.width / 100,
+  sizes.width / 100,
   5,
   (sizes.width / sizes.height) * 0.75
 )
@@ -49,7 +49,7 @@ window.addEventListener("resize", () => {
   sizes.height = window.innerHeight
   camera.updateProjectionMatrix()
   camera.aspect = sizes.width / sizes.height
-  renderer.setSize(sizes.width, sizes.height)
+  renderer.setSize(sizes.width / 8, sizes.height / 8)
 })
 // --------------------------------------
 function animate() {
