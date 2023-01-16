@@ -624,7 +624,7 @@ form {
     .icon {
       width: 5em;
       aspect-ratio: 1;
-      background-image: url("../public/assets/");
+      background-image: url("../public/assets/portrait/istockphoto-536932782-612x612.jpg");
       background-size: cover;
       background-position: center;
       border-radius: 50%;
@@ -939,4 +939,20 @@ a {
 .form .login-signup {
   margin-top: 30px;
   text-align: center;
+}
+//modal
+.form {
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(white, 0.4);
+  border-radius: 2em;
+  &::backdrop {
+    backdrop-filter: blur(20px);
+  }
+
+  form {
+    width: 100%;
+  }
 }
