@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./connexion.css" />
+    <title>Connexion</title>
+  </head>
+  <body>
+    <div>
+      <form action="/action_page.php">
+        <div class="container">
+          <img src="./public/assets/bnp/BNP.jpg" class="BNP" />
+          <h1>Connexion</h1>
+          <p>Please fill in this form to connect to your account.</p>
+          <br />
+
+          <label for="number"></label>
+          <input
+            type="number"
+            placeholder=" Entrez Votre Numéro client "
+            name="number"
+            id="number"
+            required
+          />
+
+          <label for="psw"></label>
+          <input
+            type="password"
+            placeholder="Entrez Votre Mot de passe "
+            name="psw"
+            id="psw"
+            required
+          />
+
+          <hr />
+          <p>
+            By creating an account you agree to our
+            <a href="#">Terms & Privacy</a>.
+          </p>
+          <br />
+
+          <button type="submit" class="registerbtn">Connexion</button>
+        </div>
+
+        <div class="container signin">
+          <p>Vous n'avez pas de compte ? <a href="#">Créer un compte</a>.</p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

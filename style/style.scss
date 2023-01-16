@@ -1,7 +1,13 @@
 $primary-green: #014e2b;
+$primary-bnp: #039360;
+$primary-bnp-opacity: rgba(#039360, 0.5);
+$primary-green-opacity: rgba(1, 78, 43, 0.6);
 $secondary-green: #52ba96;
+$secondary-green-opacity: rgba(82, 186, 150, 0.6);
 $primary-orange: #ff6900;
 $primary-yellow: #fcb900;
+$box-shadow-dark: 0px 5px 10px rgba(black, 0.5);
+$box-shadow-light: 0px 4px 10px rgba(white, 0.4);
 
 @mixin flex-center {
   display: flex;
@@ -24,116 +30,913 @@ html {
   font-family: "Tajawal", sans-serif;
 }
 body {
+  position: relative;
   width: 100vw;
   overflow-x: hidden;
 }
+//Scroll
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  border: 1px solid rgba($primary-green, 0.7);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-bnp;
+  border-radius: 100vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-green;
+}
+// Header
 header {
-  /* position: relative; */
   height: 100vw;
   height: 100vh;
-}
-.nav-bar {
-  position: fixed;
-  display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  height: 12.5%;
-  width: 80%;
-  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-#logo {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  background: linear-gradient($primary-green, $secondary-green, $primary-green);
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 15%;
-  // background: white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.nav-bar-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  .upper-nav {
+  // border-bottom: 1px solid $primary-bnp;
+  box-shadow: $box-shadow-dark;
+  // Navbar
+  .nav__bar {
+    box-shadow: $box-shadow-dark;
+    background: white;
+    width: 100%;
+    padding: 1em 3em;
+    position: fixed;
+    z-index: 999;
     display: flex;
-    // background: rgba(1, 78, 43, 0.8);
-    background: linear-gradient($primary-green, $secondary-green);
+    align-items: center;
     justify-content: space-between;
-    height: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 1.2em;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
-    .search-bar {
-      position: relative;
-      width: 30%;
-      @include flex-center();
-      overflow: hidden;
-      input {
-        color: black;
-        height: 80%;
-        width: 70%;
-        background: white;
-        font-size: 1.05em;
-        padding-inline: 1em;
-        border-radius: 10px;
-        outline: none;
-        border: 1px solid rgba(0, 0, 0, 0.4);
-        color: rgba(0, 0, 0, 0.9);
-        transition: transform 200ms ease-in-out;
-        &::placeholder {
-          color: rgba(0, 0, 0, 0.25);
-          font-weight: 200;
-        }
-      }
-      svg {
-        cursor: pointer;
-        height: 30px;
-        position: absolute;
-        fill: rgba(255, 255, 255, 0.8);
-        right: 1em;
-        transition: all 150ms ease-in-out;
-        &:hover {
-          transform: scale(1.1);
-          fill: white;
-        }
-      }
+    border-bottom: 10px solid $primary-bnp;
+    .logo {
+      width: 12.5%;
+      height: max-content;
     }
     ul {
       display: flex;
-      list-style: none;
-      align-items: center;
-      height: 100%;
-      width: 40%;
       justify-content: space-around;
+      width: 70%;
       li {
-        height: 100%;
-        width: 100%;
-        background: transparent;
-        border-inline: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+        a {
+          font-weight: 600;
+          position: relative;
+          color: $primary-green;
+          transition: all 200ms ease-in-out;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background: $primary-green-opacity;
+            top: 110%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 300ms ease-in-out;
+          }
+          &:hover {
+            color: $primary-bnp;
+          }
+          &:hover::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .loupe {
+      width: 25px;
+      cursor: pointer;
+      fill: $primary-bnp;
+      opacity: 0.6;
+      transition: all 250ms ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+    .search__bar__container {
+      position: absolute;
+      z-index: -99;
+      top: 100%;
+      background-color: $primary-bnp;
+      border-bottom: 1px solid white;
+      padding: 1em 2em;
+      @include flex-center();
+      width: 25%;
+      transform: translateX(100%);
+      right: 0;
+      transition: transform 400ms ease-in-out;
+      border-bottom-left-radius: 2em;
+      input[type="search"] {
+        padding: 0.75em 1em;
+        width: 90%;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+      }
+      &.appear {
+        transform: translateX(0);
+      }
+    }
+  }
+  // Header section
+  section {
+    height: 100%;
+    width: 100%;
+    padding-block: 5em;
+    @include flex-center();
+    // background: linear-gradient(white, $primary-green-opacity);
+    position: relative;
+    .transbar {
+      position: absolute;
+      bottom: 1em;
+      left: 0;
+      right: 0;
+      align-items: center;
+      justify-content: center;
+      color: rgba(white, 0.9);
+      display: flex;
+      gap: 1em;
+      .part {
+        text-transform: uppercase;
+        position: relative;
+        border-radius: 1em;
+        cursor: pointer;
+        border: 1px solid $secondary-green;
+        padding: 0.5em 1em;
+        background: $primary-bnp;
+        transition: all 200ms ease-in;
+        &:hover {
+          background: $primary-bnp-opacity;
+        }
+        &:hover::before {
+          display: block;
+        }
+        &::before {
+          display: none;
+          border-radius: 1em;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 0.9em;
+          max-height: 4em;
+          width: max-content;
+          background: rgba(black, 0.5);
+          border: 1px solid $secondary-green;
+          padding: 1em;
+          top: -175%;
+        }
+        &:first-child:before {
+          content: "Ouvrez un compte en toute simplicité et sécurité";
+        }
+        &:nth-child(2):before {
+          content: "Sélectionnez votre carte selon votre besoin";
+        }
+        &:nth-child(3):before {
+          content: "Consulter et réaliser vos opérations bancaires à distance";
+        }
+        &:nth-child(4):before {
+          content: "Financez votre bien immobilier ou vos projets";
+        }
+        &:nth-child(5):before {
+          content: "Mettez de l'argent de coté pour préparer vos projets";
+        }
+        &:nth-child(6):before {
+          content: "MAssurez votre famille, vos biens et vous-mème";
+        }
+        &:last-child:before {
+          content: "Gagnez du temps en agence";
+        }
+        svg {
+          fill: rgba(white, 0.9);
+          height: 1em;
+        }
+      }
+    }
+    // 3D Logo
+    #logo {
+      position: relative;
+    }
+    .main__container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include flex-center();
+      .logo__img {
+        position: relative;
+        top: -15%;
+        background-image: url("/assets/icons/la-banque-dun-monde-qui-change.jpg");
+        width: 30%;
+        aspect-ratio: 5/2;
+        background-size: cover;
+        object-fit: contain;
+        background-repeat: no-repeat;
+        mix-blend-mode: color-burn;
+        .btn__container {
+          position: absolute;
+          bottom: -110%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5em;
+          button {
+            width: 50%;
+            cursor: pointer;
+            background: $primary-bnp;
+            border: none;
+            color: rgba(white, 0.9);
+            font-size: 1.3em;
+            padding: 1rem;
+            border-radius: 1rem;
+            transition: opacity 150ms ease-in;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      .card {
+        width: 20%;
+        position: absolute;
+        top: 4em;
+        right: 3em;
+        padding: 1em;
+        border-radius: 1rem;
+        transform: rotate(-5deg);
+        aspect-ratio: 4/3;
+        background: #039360;
+        box-shadow: $box-shadow-dark;
+        transition: all 500ms ease-in-out;
         @include flex-center();
         cursor: pointer;
-        // transition: all 150ms ease-in;
+        .content {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backdrop-filter: saturate(140%);
+          opacity: 0;
+          transition: opacity 300ms ease-in-out;
+          @include flex-center();
+          button {
+            padding: 1em;
+            border: 1px solid $primary-green-opacity;
+            background: $primary-bnp;
+            color: white;
+            cursor: pointer;
+            border-radius: 1em;
+          }
+        }
+        &:hover .content {
+          opacity: 1;
+        }
+        .img {
+          height: 80%;
+          width: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        &.one {
+          transform: rotate(5deg);
+          top: 60%;
+
+          .img {
+            background-image: url("/assets/header__slider/banner-visa-BNPP_1400x600-FR.jpg");
+          }
+        }
+        &.two {
+          transform: rotate(5deg);
+          left: 3em;
+          .img {
+            background-image: url("/assets/header__slider/Bannière-GAB-rechargement-crédit-mobile-2000x550px.jpg");
+          }
+        }
+        &.three {
+          transform: rotate(-5deg);
+          top: 60%;
+          left: 3em;
+          .img {
+            background-image: url("/assets/header__slider/Bannière-web_2000x550px.jpg");
+          }
+        }
+        &.four {
+          transform: rotate(-5deg);
+          right: 3em;
+          .img {
+            background-image: url("/assets/header__slider/BNP_22_07_GAB_depot_banner_site_2000x550_BAT1.jpg");
+          }
+        }
         &:hover {
-          background: linear-gradient($secondary-green, $primary-green);
+          width: 30%;
+          aspect-ratio: 2;
+          transform: rotate(0);
         }
       }
     }
   }
-  .lower-nav {
+}
+// Devenir client seciont
+.devenir__client {
+  @include flex-center();
+  padding-inline: 10%;
+  padding-block: 5em;
+  width: 100%;
+  height: 60vh;
+  gap: 2em;
+  overflow: hidden;
+  .img__container {
+    //Intersection
+    transform: translateX(-100%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: 100%;
-    background: linear-gradient($secondary-green, $primary-green);
-
-    ul {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      list-style: none;
+    overflow: hidden;
+    width: 100%;
+    transition: all 1s ease-in-out;
+    &.appear {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    h1 {
+      text-align: center;
+    }
+    h1 {
+      &:last-of-type {
+        font-weight: 400;
+        color: $primary-green;
+      }
+    }
+    .img {
+      background-color: red;
+      border-radius: 50vw;
+      box-shadow: $box-shadow-dark;
+      aspect-ratio: 1;
+      background-image: url("/assets/bnp/bnp-s.jpg");
+      background-position: center;
+      background-size: cover;
+      margin-top: 2em;
+      height: 60%;
+      width: 80%;
+      margin-inline: auto;
     }
   }
+  .devenir__client__content {
+    //Intersection
+    border: 1px solid rgba(black, 0.1);
+    background: rgba(black, 0.06);
+    border-radius: 2em;
+    box-shadow: $box-shadow-dark;
+    opacity: 0;
+    transform: translateX(100%);
+    height: 100%;
+    padding: 2em;
+    transition: all 1s ease-in-out;
+    width: 100%;
+    &.appear {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    h1 {
+      font-weight: 400;
+      text-align: center;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      align-items: flex-start;
+      justify-content: space-around;
+      li {
+        list-style: circle;
+        width: 100%;
+        padding-block: 1em;
+        border-bottom: 1px solid rgba(black, 0.1);
+        &:last-of-type {
+          border-bottom: none;
+        }
+        p {
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+// Selection section
+.notre__selection {
+  height: 60vh;
+  padding: 3em 2em;
+  @include flex-center();
+  justify-content: space-between;
+
+  background: linear-gradient(white, $primary-green);
+  box-shadow: 0px 10px 10px rgba(black, 0.5);
+  .selection__card {
+    // Intersection observer
+    opacity: 0;
+    border-radius: 20%;
+    overflow: hidden;
+    background: $primary-bnp;
+    box-shadow: $box-shadow-dark;
+    height: 100%;
+    width: 20%;
+    transition: opacity 1s ease-in;
+    border: 1px solid rgba(white, 0.5);
+    &.appear {
+      opacity: 1;
+    }
+    .card__content {
+      padding: 1em;
+      height: 20%;
+      margin-bottom: 2em;
+      text-align: center;
+      color: rgba(white, 0.8);
+      h2 {
+        font-size: 1.4em;
+        font-weight: 400;
+        color: white;
+        height: 70%;
+        text-align: center;
+        line-height: 1;
+      }
+    }
+    .card__img {
+      height: 80%;
+      border-radius: 20%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      &.one {
+        background-image: url("/assets/bnp/BNP_15_05_visuel_site_bledi_750.jpg");
+      }
+      &.two {
+        background-image: url("/assets/bnp/BNP_15_05_visuel_site_taux_bonifie_750.jpg");
+      }
+      &.three {
+        background-image: url("/assets/bnp/BNP_15_05_visuel_site_immo_jeunes_750.jpg");
+      }
+      &.four {
+        background-image: url("/assets/bnp/BNP_15_05_visuel_site_esprit_libre_750.jpg");
+      }
+    }
+  }
+}
+.trouver__une__agence {
+  width: 100%;
+  background-color: rgba($primary-bnp, 0.6);
+  box-shadow: $box-shadow-dark;
+  h1 {
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    color: rgba(white, 0.85);
+    text-align: center;
+    padding-block: 1em;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.45em;
+      aspect-ratio: 1;
+      border: 1px solid white;
+      border-width: 0 3px 3px 0;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-135deg);
+      transition: transform 500ms ease-in-out;
+    }
+    &.appear::after {
+      transform: translate(-50%, -100%) rotate(45deg);
+    }
+  }
+  #map {
+    // width: 50vw;
+    margin-inline: auto;
+    width: 100%;
+    height: 50vh;
+    // height: 0vh;
+    aspect-ratio: 2;
+    // width: 200px;
+    // overflow: hidden;
+    transition: all 500ms ease-in;
+    &.appear {
+      height: 0vh;
+      visibility: visible;
+    }
+  }
+}
+form {
+  background: $primary-bnp;
+  color: rgba(white, 0.9);
+  max-height: 70vh;
+  overflow-y: scroll;
+  width: 30%;
+
+  .step.one,
+  .step.two {
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .form__groupe {
+      padding: 1em;
+      width: 100%;
+      @include flex-center();
+      justify-content: space-between;
+      gap: 1em;
+      flex-direction: column;
+      input,
+      select,
+      button,
+      textarea {
+        background: transparent;
+        border: 1px solid rgba(white, 0.3);
+        border-radius: 1em;
+        outline: none;
+        padding: 1em;
+        width: 70%;
+      }
+      select {
+        background: $primary-bnp;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(white, 0.7);
+      }
+      button,
+      input[type="submit"] {
+        cursor: pointer;
+        transition: background 200ms ease-in-out;
+        &:hover {
+          background: $secondary-green;
+        }
+      }
+    }
+  }
+  .step {
+    display: none !important;
+    &.active {
+      display: flex !important;
+    }
+  }
+}
+// Témoignage
+.temoignage {
+  width: 100%;
+  padding: 4em;
+  display: flex;
+  background: $primary-bnp-opacity;
+  box-shadow: $box-shadow-dark;
+  color: rgba(white, 0.85);
+  margin-bottom: 5em;
+  button {
+    width: 100%;
+    background-image: url("../public/assets/bnp/building.jpg");
+    background-color: rgba(black, 0.7);
+    background-blend-mode: multiply;
+    border: 1px solid $primary-bnp;
+    border-radius: 100vw;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    font-size: 2em;
+    font-weight: 600;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      filter: invert(200%);
+    }
+  }
+  .single__tem {
+    width: 100%;
+    padding: 1em;
+    .icon {
+      width: 5em;
+      aspect-ratio: 1;
+      background-image: url("../public/assets/");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+    }
+    .info {
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+    p {
+      text-align: justify;
+      width: 50%;
+    }
+    &:nth-last-of-type(2) {
+      .icon {
+        background-image: url("/assets/portrait/Laurent-Breillat_web-610x407.jpg");
+      }
+    }
+  }
+}
+//Modal
+
+//Footer
+footer {
+  width: 100%;
+  /* position:absolute; */
+  bottom: 0;
+  /* background: linear-gradient(to right,#52ba96,#014e2b); */
+
+  background-color: #142026;
+  color: white;
+  padding: 40px 0 30px;
+  border-top-left-radius: 125px;
+  border-top-right-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.row {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: 25%;
+  padding: 10px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
+.col h3 {
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+  color: #03a776;
+}
+
+.follow {
+  width: 100%;
+  @include flex-center();
+  flex-direction: column;
+}
+.follow h2 {
+  text-align: center;
+  background-color: #03a776;
+  width: 100%;
+}
+
+.reseaux {
+  height: 30px;
+  width: 40px;
+  position: relative;
+}
+//Connexion modal
+.container {
+  height: 600px;
+  width: 500px;
+  padding: 16px;
+  position: relative;
+  left: 35%;
+  border-bottom: 10px solid #014e2b;
+}
+
+.container h1 {
+  text-align: center;
+}
+.container p {
+  text-align: center;
+}
+
+.BNP {
+  height: 150px;
+  width: 300px;
+  position: relative;
+  left: 90px;
+}
+
+/* Full-width input fields */
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="number"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a GREEN text color to links */
+a {
+  color: #04aa6d;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: white;
+  text-align: center;
+  height: 100px;
+}
+.container {
+  position: relative;
+  top: 100px;
+  left: 800px;
+
+  width: 500px;
+  height: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.container .forms {
+  display: flex;
+  align-items: center;
+  height: 440px;
+  width: 200%;
+  transition: height 0.2s ease;
+  position: relative;
+  top: 60px;
+}
+
+.container .form {
+  width: 50%;
+  padding: 30px;
+  background-color: #fff;
+  transition: margin-left 0.18s ease;
+}
+
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup {
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+.container.active .signup {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.container.active .forms {
+  height: 600px;
+}
+.container .form .title {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+  left: 145px;
+  top: 35px;
+}
+
+.form .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: green;
+  border-radius: 25px;
+}
+
+.form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  top: 40px;
+}
+
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: green;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+  color: green;
+}
+
+.input-field i.icon {
+  left: 0;
+}
+.input-field i.showHidePw {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input {
+  margin-right: 10px;
+  accent-color: #4070f4;
+}
+
+.form .text {
+  color: #333;
+  font-size: 14px;
+}
+
+.form a.text {
+  color: green;
+  text-decoration: none;
+}
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form .button {
+  margin-top: 35px;
+}
+
+.form .button input {
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: green;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover {
+  background-color: #265df2;
+}
+
+.form .login-signup {
+  margin-top: 30px;
+  text-align: center;
 }

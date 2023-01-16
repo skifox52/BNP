@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url(/assets/image.png);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  font-family: "Tajawal", sans-serif;
+  overflow-x: hidden;
+}
+.nav__bar {
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.4);
+  background: white;
+  width: 100%;
+  padding: 1em 3em;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 10px solid #014e2b;
+  height: 80px;
+}
+.nav__bar .logo {
+  position: relative;
+  width: 12.5%;
+  top: 10px;
+}
+.nav__bar ul {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+.nav__bar ul li {
+  text-align: center;
+}
+.nav__bar ul li a {
+  font-weight: 600;
+  position: relative;
+  color: #014e2b;
+  transition: all 200ms ease-in-out;
+}
+.nav__bar ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: rgba(1, 78, 43, 0.7);
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 300ms ease-in-out;
+}
+.nav__bar ul li a:hover {
+  color: rgba(1, 78, 43, 0.7);
+}
+.nav__bar ul li a:hover::after {
+  width: 100%;
+}
+.nav__bar .loupe {
+  width: 25px;
+  cursor: pointer;
+  fill: #014e2b;
+  opacity: 0.6;
+  transition: all 250ms ease-in-out;
+}
+.nav__bar .loupe:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.nav__bar .search__bar__container {
+  position: absolute;
+  z-index: -99;
+  top: 100%;
+  background-color: #014e2b;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  transform: translateX(100%);
+  right: 0;
+  transition: transform 400ms ease-in-out;
+  border-bottom-left-radius: 2em;
+}
+.nav__bar .search__bar__container input[type="search"] {
+  padding: 0.75em 1em;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.nav__bar .search__bar__container.appear {
+  transform: translateX(0);
+}
+
+.container {
+  position: relative;
+  top: 100px;
+  left: 800px;
+
+  width: 500px;
+  height: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.container .forms {
+  display: flex;
+  align-items: center;
+  height: 440px;
+  width: 200%;
+  transition: height 0.2s ease;
+  position: relative;
+  top: 60px;
+}
+
+.container .form {
+  width: 50%;
+  padding: 30px;
+  background-color: #fff;
+  transition: margin-left 0.18s ease;
+}
+
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup {
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+.container.active .signup {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.container.active .forms {
+  height: 600px;
+}
+.container .form .title {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+  left: 145px;
+  top: 35px;
+}
+
+.form .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: green;
+  border-radius: 25px;
+}
+
+.form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  top: 40px;
+}
+
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: green;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+  color: green;
+}
+
+.input-field i.icon {
+  left: 0;
+}
+.input-field i.showHidePw {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input {
+  margin-right: 10px;
+  accent-color: #4070f4;
+}
+
+.form .text {
+  color: #333;
+  font-size: 14px;
+}
+
+.form a.text {
+  color: green;
+  text-decoration: none;
+}
+.form a:hover {
+  text-decoration: underline;
+}
+
+.form .button {
+  margin-top: 35px;
+}
+
+.form .button input {
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: green;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover {
+  background-color: #265df2;
+}
+
+.form .login-signup {
+  margin-top: 30px;
+  text-align: center;
+}
