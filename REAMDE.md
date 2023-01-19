@@ -4,4 +4,4 @@
 
 ### 2 - `cd into the project and run` **_npm install_**`.`
 
-### 3 - `After finishing the installation run `**_npm run dev_** `then press` _ctr+ left-click_ `onthe link provided.`
+### 3 - `After finishing the installation run `**_npm run dev_** `then press` _ctr+ left-click_ `on the link provided.`

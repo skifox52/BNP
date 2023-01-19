@@ -1,19 +1,5 @@
-$primary-green: #014e2b;
-$primary-bnp: #039360;
-$primary-bnp-opacity: rgba(#039360, 0.5);
-$primary-green-opacity: rgba(1, 78, 43, 0.6);
-$secondary-green: #52ba96;
-$secondary-green-opacity: rgba(82, 186, 150, 0.6);
-$primary-orange: #ff6900;
-$primary-yellow: #fcb900;
-$box-shadow-dark: 0px 5px 10px rgba(black, 0.5);
-$box-shadow-light: 0px 4px 10px rgba(white, 0.4);
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "./utils/mixins" as mxn;
+@use "./utils/colors" as clr;
 
 *::after,
 *::before,
@@ -42,114 +28,32 @@ body {
 /* Track */
 ::-webkit-scrollbar-track {
   background: white;
-  border: 1px solid rgba($primary-green, 0.7);
+  border: 1px solid rgba(clr.$primary-green, 0.7);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $primary-bnp;
+  background: clr.$primary-bnp;
   border-radius: 100vw;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $primary-green;
+  background: clr.$primary-green;
 }
 // Header
 header {
   height: 100vw;
   height: 100vh;
   // border-bottom: 1px solid $primary-bnp;
-  box-shadow: $box-shadow-dark;
+  box-shadow: clr.$box-shadow-dark;
   // Navbar
-  .nav__bar {
-    box-shadow: $box-shadow-dark;
-    background: white;
-    width: 100%;
-    padding: 1em 3em;
-    position: fixed;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 10px solid $primary-bnp;
-    .logo {
-      width: 12.5%;
-      height: max-content;
-    }
-    ul {
-      display: flex;
-      justify-content: space-around;
-      width: 70%;
-      li {
-        text-align: center;
-        a {
-          font-weight: 600;
-          position: relative;
-          color: $primary-green;
-          transition: all 200ms ease-in-out;
-          &::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 1px;
-            background: $primary-green-opacity;
-            top: 110%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 300ms ease-in-out;
-          }
-          &:hover {
-            color: $primary-bnp;
-          }
-          &:hover::after {
-            width: 100%;
-          }
-        }
-      }
-    }
-    .loupe {
-      width: 25px;
-      cursor: pointer;
-      fill: $primary-bnp;
-      opacity: 0.6;
-      transition: all 250ms ease-in-out;
-      &:hover {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-    }
-    .search__bar__container {
-      position: absolute;
-      z-index: -99;
-      top: 100%;
-      background-color: $primary-bnp;
-      border-bottom: 1px solid white;
-      padding: 1em 2em;
-      @include flex-center();
-      width: 25%;
-      transform: translateX(100%);
-      right: 0;
-      transition: transform 400ms ease-in-out;
-      border-bottom-left-radius: 2em;
-      input[type="search"] {
-        padding: 0.75em 1em;
-        width: 90%;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-      }
-      &.appear {
-        transform: translateX(0);
-      }
-    }
-  }
-  // Header section
+  @import "./components/navbar";
   section {
     height: 100%;
     width: 100%;
     padding-block: 5em;
-    @include flex-center();
+    @include mxn.flex-center();
     // background: linear-gradient(white, $primary-green-opacity);
     position: relative;
     .transbar {
@@ -167,12 +71,12 @@ header {
         position: relative;
         border-radius: 1em;
         cursor: pointer;
-        border: 1px solid $secondary-green;
+        border: 1px solid clr.$secondary-green;
         padding: 0.5em 1em;
-        background: $primary-bnp;
+        background: clr.$primary-bnp;
         transition: all 200ms ease-in;
         &:hover {
-          background: $primary-bnp-opacity;
+          background: clr.$primary-bnp-opacity;
         }
         &:hover::before {
           display: block;
@@ -187,7 +91,7 @@ header {
           max-height: 4em;
           width: max-content;
           background: rgba(black, 0.5);
-          border: 1px solid $secondary-green;
+          border: 1px solid clr.$secondary-green;
           padding: 1em;
           top: -175%;
         }
@@ -226,7 +130,7 @@ header {
       position: relative;
       height: 100%;
       width: 100%;
-      @include flex-center();
+      @include mxn.flex-center();
       .logo__img {
         position: relative;
         top: -15%;
@@ -250,7 +154,7 @@ header {
           button {
             width: 50%;
             cursor: pointer;
-            background: $primary-bnp;
+            background: clr.$primary-bnp;
             border: none;
             color: rgba(white, 0.9);
             font-size: 1.3em;
@@ -273,9 +177,9 @@ header {
         transform: rotate(-5deg);
         aspect-ratio: 4/3;
         background: #039360;
-        box-shadow: $box-shadow-dark;
+        box-shadow: clr.$box-shadow-dark;
         transition: all 500ms ease-in-out;
-        @include flex-center();
+        @include mxn.flex-center();
         cursor: pointer;
         .content {
           position: absolute;
@@ -284,11 +188,11 @@ header {
           backdrop-filter: saturate(140%);
           opacity: 0;
           transition: opacity 300ms ease-in-out;
-          @include flex-center();
+          @include mxn.flex-center();
           button {
             padding: 1em;
-            border: 1px solid $primary-green-opacity;
-            background: $primary-bnp;
+            border: 1px solid clr.$primary-green-opacity;
+            background: clr.$primary-bnp;
             color: white;
             cursor: pointer;
             border-radius: 1em;
@@ -345,7 +249,7 @@ header {
 }
 // Devenir client seciont
 .devenir__client {
-  @include flex-center();
+  @include mxn.flex-center();
   padding-inline: 10%;
   padding-block: 5em;
   width: 100%;
@@ -373,13 +277,13 @@ header {
     h1 {
       &:last-of-type {
         font-weight: 400;
-        color: $primary-green;
+        color: clr.$primary-green;
       }
     }
     .img {
       background-color: red;
       border-radius: 50vw;
-      box-shadow: $box-shadow-dark;
+      box-shadow: clr.$box-shadow-dark;
       aspect-ratio: 1;
       background-image: url("/assets/bnp/bnp-s.jpg");
       background-position: center;
@@ -395,7 +299,7 @@ header {
     border: 1px solid rgba(black, 0.1);
     background: rgba(black, 0.06);
     border-radius: 2em;
-    box-shadow: $box-shadow-dark;
+    box-shadow: clr.$box-shadow-dark;
     opacity: 0;
     transform: translateX(100%);
     height: 100%;
@@ -436,18 +340,18 @@ header {
 .notre__selection {
   height: 60vh;
   padding: 3em 2em;
-  @include flex-center();
+  @include mxn.flex-center();
   justify-content: space-between;
 
-  background: linear-gradient(white, $primary-green);
+  background: linear-gradient(white, clr.$primary-green);
   box-shadow: 0px 10px 10px rgba(black, 0.5);
   .selection__card {
     // Intersection observer
     opacity: 0;
     border-radius: 20%;
     overflow: hidden;
-    background: $primary-bnp;
-    box-shadow: $box-shadow-dark;
+    background: clr.$primary-bnp;
+    box-shadow: clr.$box-shadow-dark;
     height: 100%;
     width: 20%;
     transition: opacity 1s ease-in;
@@ -494,8 +398,8 @@ header {
 }
 .trouver__une__agence {
   width: 100%;
-  background-color: rgba($primary-bnp, 0.6);
-  box-shadow: $box-shadow-dark;
+  background-color: rgba(clr.$primary-bnp, 0.6);
+  box-shadow: clr.$box-shadow-dark;
   h1 {
     text-transform: uppercase;
     position: relative;
@@ -538,7 +442,7 @@ header {
   }
 }
 form {
-  background: $primary-bnp;
+  background: clr.$primary-bnp;
   color: rgba(white, 0.9);
   max-height: 70vh;
   overflow-y: scroll;
@@ -553,7 +457,7 @@ form {
     .form__groupe {
       padding: 1em;
       width: 100%;
-      @include flex-center();
+      @include mxn.flex-center();
       justify-content: space-between;
       gap: 1em;
       flex-direction: column;
@@ -569,7 +473,7 @@ form {
         width: 70%;
       }
       select {
-        background: $primary-bnp;
+        background: clr.$primary-bnp;
       }
       input::placeholder,
       textarea::placeholder {
@@ -580,7 +484,7 @@ form {
         cursor: pointer;
         transition: background 200ms ease-in-out;
         &:hover {
-          background: $secondary-green;
+          background: clr.$secondary-green;
         }
       }
     }
@@ -597,8 +501,8 @@ form {
   width: 100%;
   padding: 4em;
   display: flex;
-  background: $primary-bnp-opacity;
-  box-shadow: $box-shadow-dark;
+  background: clr.$primary-bnp-opacity;
+  box-shadow: clr.$box-shadow-dark;
   color: rgba(white, 0.85);
   margin-bottom: 5em;
   button {
@@ -606,7 +510,7 @@ form {
     background-image: url("../public/assets/bnp/building.jpg");
     background-color: rgba(black, 0.7);
     background-blend-mode: multiply;
-    border: 1px solid $primary-bnp;
+    border: 1px solid clr.$primary-bnp;
     border-radius: 100vw;
     background-size: cover;
     background-position: center;
@@ -647,85 +551,7 @@ form {
 //Modal
 
 //Footer
-footer {
-  width: 100%;
-  /* position:absolute; */
-  bottom: 0;
-  /* background: linear-gradient(to right,#52ba96,#014e2b); */
-
-  background-color: #142026;
-  color: white;
-  padding: 40px 0 30px;
-  border-top-left-radius: 125px;
-  border-top-right-radius: 125px;
-  font-size: 13px;
-  line-height: 20px;
-}
-.row {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.col {
-  flex-basis: 25%;
-  padding: 10px;
-}
-
-.logo {
-  width: 200px;
-  height: 100px;
-}
-
-.col h3 {
-  width: fit-content;
-  margin-bottom: 40px;
-  position: relative;
-  color: #03a776;
-}
-
-.follow {
-  width: 100%;
-  @include flex-center();
-  flex-direction: column;
-}
-.follow h2 {
-  text-align: center;
-  background-color: #03a776;
-  width: 100%;
-}
-
-.reseaux {
-  height: 30px;
-  width: 40px;
-  position: relative;
-}
-//Connexion modal
-.container {
-  height: 600px;
-  width: 500px;
-  padding: 16px;
-  position: relative;
-  left: 35%;
-  border-bottom: 10px solid #014e2b;
-}
-
-.container h1 {
-  text-align: center;
-}
-.container p {
-  text-align: center;
-}
-
-.BNP {
-  height: 150px;
-  width: 300px;
-  position: relative;
-  left: 90px;
-}
+@import "./components/footer";
 
 /* Full-width input fields */
 input[type="number"],

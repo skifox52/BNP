@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Tajawal", sans-serif;
+}
+
+/* le container du formalaire */
+form {
+  a {
+    color: #04aa6d;
+  }
+  .container {
+    height: 600px;
+    width: 500px;
+    padding: 16px;
+    position: relative;
+    left: 35%;
+    border-bottom: 10px solid #014e2b;
+    h1 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    .BNP {
+      height: 150px;
+      width: 300px;
+      position: relative;
+      left: 90px;
+    }
+    input[type="number"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+    input[type="number"]:focus,
+    input[type="password"]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    .registerbtn {
+      background-color: #04aa6d;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .signin {
+    background-color: white;
+    text-align: center;
+    height: 100px;
+  }
+}

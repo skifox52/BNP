@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/svg.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,8 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <script src="./java.js" defer></script>
-    <link rel="stylesheet" href="recrutement.css" />
+    <script src="../js/searchBar.js" defer></script>
+    <link rel="stylesheet" href="../scss/pages/recrutement.scss" />
 
     <title>Recrutement</title>
   </head>
@@ -213,9 +214,9 @@
             </svg>
           </div>
           <ul>
-            <li><a href="./index.html">PARTICULIERS</a></li>
-            <li><a href="./index.html">PROFESSIONNELS</a></li>
-            <li><a href="./index.html">ENTREPRISES</a></li>
+            <li><a href="../index.html">PARTICULIERS</a></li>
+            <li><a href="../index.html">PROFESSIONNELS</a></li>
+            <li><a href="../index.html">ENTREPRISES</a></li>
             <!-- <li><a href="#">PRÉ-DOMICILIATION</a></li> -->
             <li><a href="./reglementation.html">RÉGLEMENTATION</a></li>
             <li><a href="./recrutement.html">RECRUTEMENT</a></li>
@@ -238,7 +239,7 @@
       </header>
       <div>
         <div>
-          <img src="image/image.jpg" class="image" />
+          <img src="/assets/image2.jpg" class="image" />
         </div>
 
         <div class="texte">
@@ -364,7 +365,7 @@
     <footer>
       <div class="row">
         <div class="col">
-          <img src="logo/logo.png" alt="logo" class="logo" />
+          <img src="/assets/logo/logo.png" alt="logo" class="logo" />
           <h2>BNP Paribas El Djazaïr</h2>
           <br />
           <h4>La Banque D'un Monde Qui Change.</h4>
@@ -393,22 +394,28 @@
 
       <div class="follow">
         <h2>Suivez-nous sur :</h2>
-        <img
-          src="/assets/reseaux/facebook.svg"
-          alt="facebook"
-          class="reseaux"
-        />
-        <img
-          src="/assets/reseaux/instagram.svg"
-          alt="instagram"
-          class="reseaux"
-        />
-        <img
-          src="/assets/reseaux/linkedin.svg"
-          alt="linkedin"
-          class="reseaux"
-        />
-        <img src="/assets/reseaux/twitter.svg" alt="twitter" class="reseaux" />
+        <div class="res__container">
+          <img
+            src="/assets/reseaux/facebook.svg"
+            alt="facebook"
+            class="reseaux"
+          />
+          <img
+            src="/assets/reseaux/instagram.svg"
+            alt="instagram"
+            class="reseaux"
+          />
+          <img
+            src="/assets/reseaux/linkedin.svg"
+            alt="linkedin"
+            class="reseaux"
+          />
+          <img
+            src="/assets/reseaux/twitter.svg"
+            alt="twitter"
+            class="reseaux"
+          />
+        </div>
       </div>
     </footer>
   </body>

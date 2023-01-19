@@ -1,0 +1,84 @@
+@use "../utils/mixins" as mxn;
+@use "../utils/colors" as clr;
+.nav__bar {
+  box-shadow: clr.$box-shadow-dark;
+  background: white;
+  width: 100%;
+  padding: 1em 3em;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 10px solid clr.$primary-bnp;
+  .logo {
+    width: 12.5%;
+    height: max-content;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    li {
+      text-align: center;
+      a {
+        font-weight: 600;
+        position: relative;
+        color: clr.$primary-green;
+        transition: all 200ms ease-in-out;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background: clr.$primary-green-opacity;
+          top: 110%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 300ms ease-in-out;
+        }
+        &:hover {
+          color: clr.$primary-bnp;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .loupe {
+    width: 25px;
+    cursor: pointer;
+    fill: clr.$primary-bnp;
+    opacity: 0.6;
+    transition: all 250ms ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+  .search__bar__container {
+    position: absolute;
+    z-index: -99;
+    top: 100%;
+    background-color: clr.$primary-bnp;
+    border-bottom: 1px solid white;
+    padding: 1em 2em;
+    @include mxn.flex-center();
+    width: 25%;
+    transform: translateX(100%);
+    right: 0;
+    transition: transform 400ms ease-in-out;
+    border-bottom-left-radius: 2em;
+    input[type="search"] {
+      padding: 0.75em 1em;
+      width: 90%;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    &.appear {
+      transform: translateX(0);
+    }
+  }
+}

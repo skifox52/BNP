@@ -1,0 +1,49 @@
+@use "../utils/mixins" as mxn;
+footer {
+  width: 100%;
+  bottom: 0;
+  background-color: #142026;
+  color: white;
+  padding: 40px 0 30px;
+  border-top-left-radius: 125px;
+  border-top-right-radius: 125px;
+  font-size: 13px;
+  line-height: 20px;
+  .row {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    .col {
+      flex-basis: 25%;
+      padding: 10px;
+      .logo {
+        width: 200px;
+        height: 100px;
+      }
+      h3 {
+        width: fit-content;
+        margin-bottom: 40px;
+        position: relative;
+        color: #03a776;
+      }
+    }
+  }
+  .follow {
+    width: 100%;
+    @include mxn.flex-center();
+    flex-direction: column;
+    h2 {
+      text-align: center;
+      background-color: #03a776;
+      width: 100%;
+    }
+    .reseaux {
+      height: 30px;
+      width: 40px;
+      position: relative;
+    }
+  }
+}

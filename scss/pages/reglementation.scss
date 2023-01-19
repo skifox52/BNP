@@ -1,0 +1,61 @@
+@use "../utils/colors" as clr;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Tajawal", sans-serif;
+  overflow-x: hidden;
+}
+//Navbar
+@import "../components/navbar";
+.texte {
+  h1 {
+    padding-top: 4em;
+    color: black;
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+    color: rgba(black, 0.65);
+    text-align: center;
+    margin-inline: auto;
+    padding: 10px 0 20px;
+    max-width: 70%;
+  }
+}
+.tableau {
+  position: relative;
+  left: 25%;
+  margin-block: 2em;
+  table,
+  tbody,
+  td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+  }
+  table,
+  thead,
+  tr,
+  th {
+    width: 50%;
+    padding: 20px 0 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #03a776;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+//Footer
+@import "../components/footer";
