@@ -1,5 +1,7 @@
 @use "./utils/mixins" as mxn;
 @use "./utils/colors" as clr;
+@use "./components/navbar";
+@import "./components/footer";
 
 *::after,
 *::before,
@@ -48,13 +50,11 @@ header {
   // border-bottom: 1px solid $primary-bnp;
   box-shadow: clr.$box-shadow-dark;
   // Navbar
-  @import "./components/navbar";
   section {
     height: 100%;
     width: 100%;
     padding-block: 5em;
-    @include mxn.flex-center();
-    // background: linear-gradient(white, $primary-green-opacity);
+    @include mxn.flex-center(row);
     position: relative;
     .transbar {
       position: absolute;
@@ -130,7 +130,7 @@ header {
       position: relative;
       height: 100%;
       width: 100%;
-      @include mxn.flex-center();
+      @include mxn.flex-center(row);
       .logo__img {
         position: relative;
         top: -15%;
@@ -179,7 +179,7 @@ header {
         background: #039360;
         box-shadow: clr.$box-shadow-dark;
         transition: all 500ms ease-in-out;
-        @include mxn.flex-center();
+        @include mxn.flex-center(row);
         cursor: pointer;
         .content {
           position: absolute;
@@ -188,7 +188,7 @@ header {
           backdrop-filter: saturate(140%);
           opacity: 0;
           transition: opacity 300ms ease-in-out;
-          @include mxn.flex-center();
+          @include mxn.flex-center(row);
           button {
             padding: 1em;
             border: 1px solid clr.$primary-green-opacity;
@@ -249,7 +249,7 @@ header {
 }
 // Devenir client seciont
 .devenir__client {
-  @include mxn.flex-center();
+  @include mxn.flex-center(row);
   padding-inline: 10%;
   padding-block: 5em;
   width: 100%;
@@ -340,7 +340,7 @@ header {
 .notre__selection {
   height: 60vh;
   padding: 3em 2em;
-  @include mxn.flex-center();
+  @include mxn.flex-center(row);
   justify-content: space-between;
 
   background: linear-gradient(white, clr.$primary-green);
@@ -457,7 +457,7 @@ form {
     .form__groupe {
       padding: 1em;
       width: 100%;
-      @include mxn.flex-center();
+      @include mxn.flex-center(row);
       justify-content: space-between;
       gap: 1em;
       flex-direction: column;
@@ -548,10 +548,6 @@ form {
     }
   }
 }
-//Modal
-
-//Footer
-@import "./components/footer";
 
 /* Full-width input fields */
 input[type="number"],

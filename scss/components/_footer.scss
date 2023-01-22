@@ -33,7 +33,7 @@ footer {
   }
   .follow {
     width: 100%;
-    @include mxn.flex-center();
+    @include mxn.flex-center(row);
     flex-direction: column;
     h2 {
       text-align: center;
