@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./scss/style.scss" />
+    <script src="./js/formvalidation.js" defer></script>
     <title>Vite App</title>
   </head>
   <body>
@@ -31,7 +32,6 @@
               <li><a href="./pages/reglementation.html">RÉGLEMENTATION</a></li>
               <li><a href="./pages/recrutement.html">RECRUTEMENT</a></li>
               <li><a href="./pages/nous-connaitre.html">NOUS CONNAITRE</a></li>
-              
             </ul>
           </div>
         </div>
@@ -443,12 +443,18 @@
       <div id="map"></div>
     </div>
     <dialog class="form">
-      <form>
+      <form id="form" method="dialog">
         <div class="step one active">
           <div class="form__groupe">
             <h3>Êtes-vous client ?</h3>
             <label for="client__oui">Oui</label>
-            <input type="radio" id="client__oui" value="Oui" name="client" />
+            <input
+              type="radio"
+              id="client__oui"
+              value="Oui"
+              name="client"
+              checked
+            />
             <label for="client__non">Non</label>
             <input type="radio" id="client__non" value="Non" name="client" />
           </div>
@@ -460,6 +466,7 @@
               id="residant__algerie"
               value="Oui"
               name="residant"
+              checked
             />
             <label for="residant__etranger">A l'étranger</label>
             <input
@@ -517,7 +524,7 @@
           <div class="form__groupe">
             <label for="area"> <h3>Votre message</h3></label>
             <textarea
-              id=""
+              id="text"
               cols="30"
               rows="10"
               placeholder="Votre message..."
