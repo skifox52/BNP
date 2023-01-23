@@ -1,7 +1,7 @@
 @use "./utils/mixins" as mxn;
 @use "./utils/colors" as clr;
 @use "./components/navbar";
-@import "./components/footer";
+@use "./components/footer";
 
 *::after,
 *::before,
@@ -47,7 +47,6 @@ body {
 header {
   height: 100vw;
   height: 100vh;
-  // border-bottom: 1px solid $primary-bnp;
   box-shadow: clr.$box-shadow-dark;
   // Navbar
   section {
@@ -66,7 +65,31 @@ header {
       color: rgba(white, 0.9);
       display: flex;
       gap: 1em;
+      @include mxn.lg {
+        gap: 0;
+        width: 100%;
+      }
+      @include mxn.xl {
+        font-size: 0.8rem;
+      }
+      @include mxn.sm {
+        flex-wrap: wrap;
+      }
       .part {
+        @include mxn.lg {
+          flex: 1;
+          height: 4rem;
+          text-align: center;
+          border-radius: 0;
+          @include mxn.flex-center(row);
+        }
+        @include mxn.sm {
+          font-size: 0.65rem;
+          min-width: max-content;
+        }
+        @include mxn.xs {
+          font-size: 0.6rem;
+        }
         text-transform: uppercase;
         position: relative;
         border-radius: 1em;
@@ -90,10 +113,16 @@ header {
           font-size: 0.9em;
           max-height: 4em;
           width: max-content;
-          background: rgba(black, 0.5);
+          background: rgba(black, 0.8);
           border: 1px solid clr.$secondary-green;
           padding: 1em;
           top: -175%;
+          @include mxn.lg {
+            top: -100%;
+          }
+          @include mxn.sm {
+            top: -70%;
+          }
         }
         &:first-child:before {
           content: "Ouvrez un compte en toute simplicité et sécurité";
@@ -122,10 +151,7 @@ header {
         }
       }
     }
-    // 3D Logo
-    #logo {
-      position: relative;
-    }
+
     .main__container {
       position: relative;
       height: 100%;
@@ -136,6 +162,12 @@ header {
         top: -15%;
         background-image: url("/assets/icons/la-banque-dun-monde-qui-change.jpg");
         width: 30%;
+        @include mxn.sm {
+          width: 40%;
+        }
+        @include mxn.xs {
+          width: 80%;
+        }
         aspect-ratio: 5/2;
         background-size: cover;
         object-fit: contain;
@@ -151,16 +183,35 @@ header {
           flex-direction: column;
           align-items: center;
           gap: 0.5em;
+          @include mxn.lg {
+            bottom: -150%;
+          }
+          @include mxn.sm {
+            bottom: -120%;
+            width: 120%;
+          }
+          @include mxn.xs {
+            bottom: -95%;
+            width: 180%;
+          }
           button {
             width: 50%;
             cursor: pointer;
             background: clr.$primary-bnp;
             border: none;
             color: rgba(white, 0.9);
-            font-size: 1.3em;
-            padding: 1rem;
+            font-size: 1.2rem;
+            padding: 1rem 0;
             border-radius: 1rem;
             transition: opacity 150ms ease-in;
+            @include mxn.lg {
+              font-size: 0.75rem;
+              padding: 0.5rem;
+            }
+            @include mxn.sm {
+              font-size: 0.7rem;
+              padding: 0.5rem 0.25rem;
+            }
             &:hover {
               opacity: 0.7;
             }
@@ -181,6 +232,18 @@ header {
         transition: all 500ms ease-in-out;
         @include mxn.flex-center(row);
         cursor: pointer;
+        @include mxn.lg {
+          width: 22.5%;
+        }
+        @include mxn.md {
+          width: 22%;
+          padding: 0 0.5rem;
+        }
+        @include mxn.sm {
+          width: 30%;
+          padding: 0px;
+          top: 0;
+        }
         .content {
           position: absolute;
           width: 100%;
@@ -211,6 +274,9 @@ header {
         &.one {
           transform: rotate(5deg);
           top: 60%;
+          @include mxn.sm {
+            top: 65%;
+          }
 
           .img {
             background-image: url("/assets/header__slider/banner-visa-BNPP_1400x600-FR.jpg");
@@ -227,6 +293,9 @@ header {
           transform: rotate(-5deg);
           top: 60%;
           left: 3em;
+          @include mxn.sm {
+            top: 65%;
+          }
           .img {
             background-image: url("/assets/header__slider/Bannière-web_2000x550px.jpg");
           }
@@ -251,9 +320,14 @@ header {
 .devenir__client {
   @include mxn.flex-center(row);
   padding-inline: 10%;
+  @include mxn.lg {
+    padding-inline: 2rem;
+  }
+  @include mxn.md {
+    flex-direction: column;
+  }
   padding-block: 5em;
   width: 100%;
-  height: 60vh;
   gap: 2em;
   overflow: hidden;
   .img__container {
@@ -263,7 +337,6 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
     overflow: hidden;
     width: 100%;
     transition: all 1s ease-in-out;
@@ -281,16 +354,14 @@ header {
       }
     }
     .img {
-      background-color: red;
       border-radius: 50vw;
-      box-shadow: clr.$box-shadow-dark;
       aspect-ratio: 1;
       background-image: url("/assets/bnp/bnp-s.jpg");
       background-position: center;
       background-size: cover;
       margin-top: 2em;
-      height: 60%;
-      width: 80%;
+      height: 40%;
+      width: 50%;
       margin-inline: auto;
     }
   }
@@ -306,6 +377,9 @@ header {
     padding: 2em;
     transition: all 1s ease-in-out;
     width: 100%;
+    @include mxn.sm {
+      font-size: 0.8rem;
+    }
     &.appear {
       opacity: 1;
       transform: translateX(0);
@@ -313,6 +387,9 @@ header {
     h1 {
       font-weight: 400;
       text-align: center;
+      @include mxn.xs {
+        font-size: 1.3rem;
+      }
     }
     ul {
       display: flex;
@@ -331,6 +408,15 @@ header {
         p {
           font-weight: 600;
           font-size: 1.1rem;
+          @include mxn.lg {
+            font-size: 1rem;
+          }
+          @include mxn.sm {
+            font-size: 0.9rem;
+          }
+          @include mxn.xs {
+            font-size: 0.8rem;
+          }
         }
       }
     }
@@ -338,13 +424,25 @@ header {
 }
 // Selection section
 .notre__selection {
-  height: 60vh;
+  min-height: 60vh;
   padding: 3em 2em;
   @include mxn.flex-center(row);
   justify-content: space-between;
-
   background: linear-gradient(white, clr.$primary-green);
   box-shadow: 0px 10px 10px rgba(black, 0.5);
+  @include mxn.xl {
+    padding: 3em 1em;
+  }
+  @include mxn.lg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @include mxn.sm {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
   .selection__card {
     // Intersection observer
     opacity: 0;
@@ -356,6 +454,22 @@ header {
     width: 20%;
     transition: opacity 1s ease-in;
     border: 1px solid rgba(white, 0.5);
+    @include mxn.xl {
+      width: 24%;
+    }
+    @include mxn.lg {
+      width: 80%;
+      margin-inline: auto;
+      height: 40vh;
+    }
+    @include mxn.sm {
+      width: 60%;
+      margin-inline: auto;
+      height: 50vh;
+    }
+    @include mxn.xs {
+      width: 90%;
+    }
     &.appear {
       opacity: 1;
     }
@@ -365,13 +479,20 @@ header {
       margin-bottom: 2em;
       text-align: center;
       color: rgba(white, 0.8);
-      h2 {
-        font-size: 1.4em;
-        font-weight: 400;
-        color: white;
-        height: 70%;
-        text-align: center;
-        line-height: 1;
+    }
+    h2 {
+      font-size: 1.4em;
+      font-weight: 400;
+      color: white;
+      height: 70%;
+      text-align: center;
+      line-height: 1;
+      @include mxn.xl {
+        font-size: 1.2rem;
+        padding-inline: 1rem;
+      }
+      @include mxn.md {
+        font-size: 1.1rem;
       }
     }
     .card__img {
@@ -426,18 +547,14 @@ header {
     }
   }
   #map {
-    // width: 50vw;
+    z-index: 0;
     margin-inline: auto;
     width: 100%;
     height: 50vh;
-    // height: 0vh;
     aspect-ratio: 2;
-    // width: 200px;
-    // overflow: hidden;
     transition: all 500ms ease-in;
     &.appear {
       height: 0vh;
-      visibility: visible;
     }
   }
 }
@@ -500,14 +617,25 @@ form {
 .temoignage {
   width: 100%;
   padding: 4em;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   background: clr.$primary-bnp-opacity;
   box-shadow: clr.$box-shadow-dark;
   color: rgba(white, 0.85);
   margin-bottom: 5em;
+  @include mxn.md {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+  }
+  @include mxn.sm {
+    padding: 2rem;
+  }
+  @include mxn.xs {
+    padding: 1rem;
+  }
   button {
     width: 100%;
-    background-image: url("../public/assets/bnp/building.jpg");
+    background-image: url("/assets/bnp/building.jpg");
     background-color: rgba(black, 0.7);
     background-blend-mode: multiply;
     border: 1px solid clr.$primary-bnp;
@@ -518,17 +646,21 @@ form {
     font-size: 2em;
     font-weight: 600;
     transition: all 300ms ease-in-out;
+    @include mxn.md {
+      padding: 1rem;
+    }
     &:hover {
       filter: invert(200%);
     }
   }
   .single__tem {
     width: 100%;
-    padding: 1em;
+    @include mxn.flex-center(column);
+    gap: 0.5rem;
     .icon {
       width: 5em;
       aspect-ratio: 1;
-      background-image: url("../public/assets/portrait/istockphoto-536932782-612x612.jpg");
+      background-image: url("/assets/portrait/istockphoto-536932782-612x612.jpg");
       background-size: cover;
       background-position: center;
       border-radius: 50%;
@@ -540,6 +672,12 @@ form {
     p {
       text-align: justify;
       width: 50%;
+      @include mxn.sm {
+        width: 70%;
+      }
+      @include mxn.xs {
+        width: 90%;
+      }
     }
     &:nth-last-of-type(2) {
       .icon {
@@ -588,180 +726,7 @@ a {
 }
 
 /* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: white;
-  text-align: center;
-  height: 100px;
-}
-.container {
-  position: relative;
-  top: 100px;
-  left: 800px;
 
-  width: 500px;
-  height: 600px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 0 20px;
-}
-
-.container .forms {
-  display: flex;
-  align-items: center;
-  height: 440px;
-  width: 200%;
-  transition: height 0.2s ease;
-  position: relative;
-  top: 60px;
-}
-
-.container .form {
-  width: 50%;
-  padding: 30px;
-  background-color: #fff;
-  transition: margin-left 0.18s ease;
-}
-
-.container.active .login {
-  margin-left: -50%;
-  opacity: 0;
-  transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
-
-.container .signup {
-  opacity: 0;
-  transition: opacity 0.09s ease;
-}
-.container.active .signup {
-  opacity: 1;
-  transition: opacity 0.2s ease;
-}
-
-.container.active .forms {
-  height: 600px;
-}
-.container .form .title {
-  position: relative;
-  font-size: 27px;
-  font-weight: 600;
-  left: 145px;
-  top: 35px;
-}
-
-.form .title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  background-color: green;
-  border-radius: 25px;
-}
-
-.form .input-field {
-  position: relative;
-  height: 50px;
-  width: 100%;
-  margin-top: 30px;
-  top: 40px;
-}
-
-.input-field input {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 0 35px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  border-bottom: 2px solid #ccc;
-  border-top: 2px solid transparent;
-  transition: all 0.2s ease;
-}
-
-.input-field input:is(:focus, :valid) {
-  border-bottom-color: green;
-}
-
-.input-field i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 23px;
-  transition: all 0.2s ease;
-}
-
-.input-field input:is(:focus, :valid) ~ i {
-  color: green;
-}
-
-.input-field i.icon {
-  left: 0;
-}
-.input-field i.showHidePw {
-  right: 0;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.form .checkbox-text {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.checkbox-text .checkbox-content {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox-content input {
-  margin-right: 10px;
-  accent-color: #4070f4;
-}
-
-.form .text {
-  color: #333;
-  font-size: 14px;
-}
-
-.form a.text {
-  color: green;
-  text-decoration: none;
-}
-.form a:hover {
-  text-decoration: underline;
-}
-
-.form .button {
-  margin-top: 35px;
-}
-
-.form .button input {
-  border: none;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 6px;
-  background-color: green;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.button input:hover {
-  background-color: #265df2;
-}
-
-.form .login-signup {
-  margin-top: 30px;
-  text-align: center;
-}
 //modal
 .form {
   width: 40%;

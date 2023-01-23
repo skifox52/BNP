@@ -3,7 +3,7 @@ $breakpoints: (
   "xs": 480px,
   "sm": 825px,
   "md": 1024px,
-  "lg": 1200px,
+  "lg": 1250px,
   "xl": 1500px,
 );
 
@@ -37,5 +37,5 @@ $breakpoints: (
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: $direction;
 }

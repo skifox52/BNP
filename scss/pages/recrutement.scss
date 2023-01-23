@@ -1,4 +1,9 @@
-* {
+@use "../components/navbar";
+@use "../utils/colors" as clr;
+@use "../utils/mixins" as mxn;
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,375 +14,152 @@ body {
   font-family: "Tajawal", sans-serif;
   overflow-x: hidden;
 }
-@import "../components/navbar";
-.image {
-  width: 100%;
-  height: 90%;
-  position: absolute;
-}
-
-.texte {
-  h1 {
-    position: relative;
-    font-size: 50px;
-    width: 40%;
-    left: 120px;
-    top: 200px;
-    color: white;
+.hero__section {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  .image {
+    width: 100%;
+    object-fit: contain;
   }
-  h3 {
-    position: relative;
-    font-size: 20px;
-    width: 40%;
-    left: 120px;
-    top: 200px;
-    color: white;
-    text-align: center;
+
+  .texte {
+    h1 {
+      position: absolute;
+      font-size: 50px;
+      width: 40%;
+      left: 4rem;
+      top: 20%;
+      color: rgba(white, 0.95);
+      font-weight: 400;
+    }
+    h3 {
+      position: absolute;
+      font-size: 20px;
+      width: 40%;
+      top: 30%;
+      color: white;
+      text-align: center;
+    }
   }
   .espace-candidat {
-    position: relative;
-    background-color: white;
-    width: 200px;
-    height: 250px;
-    border-color: black;
-    border-radius: 10px;
-    left: 1000px;
-    top: 35px;
-    opacity: 0.9;
-    padding: 60px 0 100px;
-    text-align: center;
-  }
-}
-.espace-candidat {
-  p {
-    padding: 20px 0 30px;
-  }
-  button {
-    color: white;
-    background-color: black;
-    border-radius: 20px;
-    padding: 8px 0 8px;
-  }
-}
-.barre-recherche {
-  position: relative;
-  background-color: white;
-  width: 60%;
-  height: 100px;
-  border-radius: 30px;
-  top: 120px;
-  left: 300px;
-  border: solid grey 2px;
-  .box {
-    input {
-      position: relative;
-      display: inline-block;
-      font-size: 20px;
-      box-sizing: border-box;
-      transition: 0.5s;
-    }
-    input[type="text"] {
-      background: #fff;
-      width: 90%;
-      height: 35px;
-      outline: none;
-      padding: 0 25px;
-      border-radius: 25px;
-      border: none;
-      color: rgb(148, 148, 148);
-      background-color: rgb(225, 223, 223);
-    }
     position: absolute;
-    top: 60%;
-    left: 55%;
-    width: 500px;
-    transform: translate(-50%, -50%);
-    .dropdown1 {
-      float: left;
-      overflow: hidden;
-      top: 30px;
-      .dropbtn1 {
-        cursor: pointer;
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: black;
-        padding: 14px 16px;
-        background-color: inherit;
-
-        margin: 0;
+    background-color: rgba(white, 0.8);
+    border: 1px solid rgab(black, 0.4);
+    box-shadow: clr.$box-shadow-dark;
+    border-color: black;
+    border-radius: 1em;
+    max-width: 20%;
+    right: 20%;
+    top: 50%;
+    padding: 2rem;
+    text-align: center;
+    transform: translateY(-100%);
+    p {
+      padding-block: 1rem;
+    }
+    button {
+      color: white;
+      background-color: black;
+      border-radius: 20px;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: clr.$box-shadow-dark;
+      transition: all 200ms ease-in;
+      &:hover {
+        transform: translateX(1px);
+        box-shadow: none;
       }
-      &:hover .dropbtn1,
-      .dropbtn1:focus {
-        background-color: #014e2b;
-      }
-      .dropdown-content1 {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        a {
-          float: none;
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          text-align: left;
-          &:hover {
-            background-color: #ddd;
-          }
-        }
-      }
-
-      .dropdown2 {
-        float: left;
-        overflow: hidden;
-        top: 30px;
-        .dropbtn2 {
-          cursor: pointer;
-          font-size: 16px;
-          border: none;
+    }
+  }
+  .barre-recherche {
+    position: relative;
+    width: 60%;
+    margin-inline: auto;
+    height: fit-content;
+    border-radius: 30px;
+    border: solid rgba(black, 0.2) 1px;
+    padding: 2rem;
+    bottom: 2rem;
+    box-shadow: clr.$box-shadow-dark;
+    .box {
+      width: 100%;
+      form {
+        width: 100%;
+        input[type="text"] {
+          background: #fff;
+          height: 35px;
           outline: none;
-          color: black;
-          padding: 14px 16px;
-          background-color: inherit;
-          margin: 0;
-        }
-        &:hover .dropbtn2,
-        .dropbtn2:focus {
-          background-color: #014e2b;
-        }
-        .dropdown-content2 {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            &:hover {
-              background-color: #ddd;
-            }
+          width: 100%;
+          padding: 1rem;
+          border-radius: 1rem;
+          border: none;
+          color: rgba(white, 0.8);
+          background: rgba(black, 0.8);
+          border: 1px solid rgab(black, 0.4);
+          margin-bottom: 0.5rem;
+          &::placeholder {
+            color: rgba(white, 0.75);
           }
         }
       }
+      .dropdown1 {
+        width: 100%;
+        overflow: hidden;
+        select {
+          width: 100%;
+          padding: 1rem;
+          border-radius: 1rem;
+          background: rgba(black, 0.8);
+          color: rgba(white, 0.8);
+          margin-bottom: 0.5rem;
+        }
+      }
+      .dropdown2,
       .dropdown3 {
-        float: left;
-        overflow: hidden;
-        top: 30px;
-        .dropbtn3 {
-          cursor: pointer;
-          font-size: 16px;
-          border: none;
-          outline: none;
-          color: black;
-          padding: 14px 16px;
-          background-color: inherit;
-          margin: 0;
-        }
-        .navbar a:hover,
-        .dropdown3:hover .dropbtn3,
-        .dropbtn3:focus {
-          background-color: #014e2b;
-        }
-        .dropdown-content3 {
-          display: none;
-          position: absolute;
-          background-color: #f1f1f1;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          z-index: 1;
-          a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            &:hover {
-              background-color: #ddd;
-            }
-          }
-        }
+        @extend .dropdown1;
       }
     }
   }
 }
 
 .offres {
-  position: relative;
-  top: 150px;
-  height: 1600px;
-  h1 {
-    text-align: center;
-    font-size: 40px;
-  }
-  .cdi {
+  width: 100%;
+  margin-block: 10rem;
+  @include mxn.flex-center(column);
+  gap: 1em;
+  .item {
     width: 60%;
     height: 40px;
-    left: 300px;
     padding: 50px 0 80px;
-    border: solid grey 2px;
+    border: solid rgba(black, 0.3) 1px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
+    padding-left: 5%;
+    @include mxn.flex-center(column);
+    align-items: start;
     &::after {
       content: "";
       position: absolute;
       top: 0;
-      left: 0;
       bottom: 0;
+      left: 0;
       right: 95%;
-      background-color: #014e2b;
+      background-color: clr.$primary-bnp;
     }
     h5 {
       color: #014e2b;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
     }
     h3 {
       color: black;
-      padding: 10px 0 10px;
       font-size: 25px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
     }
     P {
-      color: gray;
+      color: red;
       font-size: 12px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-  }
-  .cdd {
-    width: 60%;
-    height: 40px;
-    left: 300px;
-    padding: 50px 0 80px;
-    border: solid grey 2px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 95%;
-      background-color: rgb(70, 209, 255);
-    }
-    h5 {
-      color: rgb(70, 209, 255);
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    h3 {
-      color: black;
-      padding: 10px 0 10px;
-      font-size: 25px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    P {
-      color: gray;
-      font-size: 12px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-  }
-  .stage {
-    width: 60%;
-    height: 40px;
-    left: 300px;
-    padding: 50px 0 80px;
-    border: solid grey 2px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 95%;
-      background-color: orange;
-    }
-    h5 {
-      color: orange;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    h3 {
-      color: black;
-      padding: 10px 0 10px;
-      font-size: 25px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    P {
-      color: gray;
-      font-size: 12px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-  }
-  .alternance {
-    width: 60%;
-    height: 40px;
-    left: 300px;
-    padding: 50px 0 80px;
-    border: solid grey 2px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 95%;
-      background-color: yellow;
-    }
-    h5 {
-      color: yellow;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    h3 {
-      color: black;
-      padding: 10px 0 10px;
-      font-size: 25px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-    }
-    P {
-      color: gray;
-      font-size: 12px;
-      position: relative;
-      left: 100px;
-      bottom: 40px;
     }
   }
 }
