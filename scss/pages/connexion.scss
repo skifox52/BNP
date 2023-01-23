@@ -1,3 +1,4 @@
+@use "../utils/mixins" as mxn;
 * {
   margin: 0;
   padding: 0;
@@ -6,18 +7,20 @@
   list-style: none;
   font-family: "Tajawal", sans-serif;
 }
-
+body {
+  width: 100vw;
+  height: 100vh;
+  @include mxn.flex-center(row);  
+  overflow-x: hidden;
+}
 /* le container du formalaire */
-form {
+
   a {
     color: #04aa6d;
   }
   .container {
-    height: 600px;
-    width: 500px;
     padding: 16px;
-    position: relative;
-    left: 35%;
+    @include mxn.flex-center(column);
     border-bottom: 10px solid #014e2b;
     h1 {
       text-align: center;
@@ -28,8 +31,7 @@ form {
     .BNP {
       height: 150px;
       width: 300px;
-      position: relative;
-      left: 90px;
+   
     }
     input[type="number"],
     input[type="password"] {
@@ -65,4 +67,191 @@ form {
     text-align: center;
     height: 100px;
   }
+
+@include mxn.xs {
+  
+    
+    .container {
+      height: 100%;
+      width: 80%;
+      padding: 16px;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+      
+        h1 {
+        text-align: center;
+      }
+        p {
+        text-align: center;
+      }
+      .BNP {
+        height: 150px;
+        width: 300px;
+        position: relative;
+        margin-left: 0;
+        margin-right: 0;
+      }
+        input[type="number"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+  
+        input[type="number"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+        .registerbtn {
+        background-color: #04aa6d;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+      .signin {
+      background-color: white;
+      text-align: center;
+      height: 100px;
+    }
+  }
+  
+  
+
+@include mxn.sm {
+  .container {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    
+      h1 {
+      text-align: center;
+    }
+      p {
+      text-align: center;
+    }
+    .BNP {
+      height: 150px;
+      width: 300px;
+      position: relative;
+      margin-left: 0;
+      margin-right: 0;
+    }
+      input[type="number"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
+      input[type="number"]:focus,
+    input[type="password"]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+      .registerbtn {
+      background-color: #04aa6d;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+    .signin {
+    background-color: white;
+    text-align: center;
+    height: 100px;
+  }
+
+  
 }
+@include mxn.md {
+  form {
+    a {
+      color: #04aa6d;
+    }
+    .container {
+      padding: 16px;
+      position: relative;
+      left: 35%;
+      border-bottom: 10px solid #014e2b;
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      .BNP {
+        height: 150px;
+        width: 300px;
+        position: relative;
+        left: 90px;
+      }
+      input[type="number"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+  
+      input[type="number"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .registerbtn {
+        background-color: #04aa6d;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .signin {
+      background-color: white;
+      text-align: center;
+      height: 100px;
+    }
+  }
+  
+}
+@include mxn.lg {
+ 
+}
+@include mxn.xl {
+  
+}
+

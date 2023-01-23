@@ -1,0 +1,127 @@
+body{
+  margin: 5px;
+}
+//Navbar
+@import "../components/navbar";
+.imtb {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  position: relative;
+  background-image: url("imgbnp4/instit_7_2000.jpeg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: center;
+  h1{
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+}
+@media screen and (max-width: 500px) {
+  .imtb{
+
+background-image: url("imgbnp4/326419810_5542312572565007_4104402002980087611_n.jpg");
+background-position: right;}
+.imtb h1 {
+  color: white;
+  
+}
+
+  
+}
+//**************** le style qu'on veux appliquer plusieurs fois********************** 
+@mixin style{
+
+    display: flex;
+  color: #24a18c;
+  overflow: hidden;
+  flex-direction: row;
+  width: 100%;
+  gap: 0;
+    .imr{
+      width: 50%;
+  padding: 0;
+  margin: 0;
+      img{
+        width: 100%;
+        height: 100%;
+        
+      }
+    }
+      .text{
+        width: 50%;
+  // padding: 1rem;
+  background-color: #24a18c;
+  color: white;
+  h2{
+    padding: 2rem;
+  }
+  p{
+    padding: 1rem;
+  }
+  a{
+    color:#014e2b ;
+    text-decoration: none;
+     &:hover{
+    color:white;
+
+      }
+  }
+ 
+      }
+    
+   
+    @media screen and (max-width: 500px) {
+      .containe{
+        
+        flex-direction: column-reverse;
+        
+      }
+      .containe .text{
+      
+        width: 100%;
+        height: 100% !important;
+      }
+      .containe .imr{
+        width: 100%;
+        height: auto;
+      }
+    
+}
+
+}
+
+// **************** on applique nos mexins et s'il ya de diffence on la remplace directement************************* 
+
+// ******** la premiere div *****
+.containe{
+ @include style ;
+
+}
+
+// ******* la deuxieme div ******
+.cont{
+  @include style;
+  flex-direction: row-reverse;
+}
+
+// ****** la troisieme div *****
+.contine{
+  @include style;
+}
+
+// ***** la quatrieme div *****
+.contai{
+  @include style;
+  flex-direction: row-reverse;
+}
+
+// *****la cinquieme ******
+.conai{
+  @include style;
+}
+
+//Footer
+@import "../components/footer";

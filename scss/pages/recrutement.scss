@@ -15,6 +15,7 @@ body {
   overflow-x: hidden;
 }
 .hero__section {
+
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -37,7 +38,7 @@ body {
       position: absolute;
       font-size: 20px;
       width: 40%;
-      top: 30%;
+      top: 40%;
       color: white;
       text-align: center;
     }
@@ -117,14 +118,695 @@ body {
           margin-bottom: 0.5rem;
         }
       }
-      .dropdown2,
+      .dropdown2 {
+        width: 100%;
+        overflow: hidden;
+        select {
+          width: 100%;
+          padding: 1rem;
+          border-radius: 1rem;
+          background: rgba(black, 0.8);
+          color: rgba(white, 0.8);
+          margin-bottom: 0.5rem;
+        }
+      }
       .dropdown3 {
-        @extend .dropdown1;
+        width: 100%;
+        overflow: hidden;
+        select {
+          width: 100%;
+          padding: 1rem;
+          border-radius: 1rem;
+          background: rgba(black, 0.8);
+          color: rgba(white, 0.8);
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }
 }
 
+
+@include mxn.xs {
+  .hero__section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .image {
+      width: 100%;
+      object-fit: contain;
+    }
+  
+    .texte {
+      h1 {
+        position: absolute;
+        font-size: 15px;
+        width: 40%;
+        left: 4rem;
+        top: 20%;
+        color: rgba(white, 0.95);
+        
+      }
+      h3 {
+        position: absolute;
+        font-size: 10px;
+        width: 40%;
+        top: 40%;
+        color: white;
+        text-align: center;
+      }
+    }
+    .espace-candidat {
+      position: relative;
+      background-color: rgba(white, 0.8);
+      border: 1px solid rgab(black, 0.4);
+      box-shadow: clr.$box-shadow-dark;
+      border-color: black;
+      border-radius: 1em;
+      max-width: fit-content;
+      right: 20%;
+      top: 50%;
+      padding: 2rem;
+      text-align: center;
+      transform: translateY(-100%);
+      p {
+        padding-block: 1rem;
+      }
+      button {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: clr.$box-shadow-dark;
+        transition: all 200ms ease-in;
+        &:hover {
+          transform: translateX(1px);
+          box-shadow: none;
+        }
+      }
+    }
+    .barre-recherche {
+      position: relative;
+      width: 60%;
+      margin-inline: auto;
+      height: fit-content;
+      border-radius: 30px;
+      border: solid rgba(black, 0.2) 1px;
+      padding: 2rem;
+      bottom: 2rem;
+      box-shadow: clr.$box-shadow-dark;
+      .box {
+        width: 100%;
+        form {
+          width: 100%;
+          input[type="text"] {
+            background: #fff;
+            height: 35px;
+            outline: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            color: rgba(white, 0.8);
+            background: rgba(black, 0.8);
+            border: 1px solid rgab(black, 0.4);
+            margin-bottom: 0.5rem;
+            &::placeholder {
+              color: rgba(white, 0.75);
+            }
+          }
+        }
+        .dropdown1 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown2 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown3 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            
+          }
+        }
+      }
+    }
+  }
+}
+@include mxn.sm {
+  .hero__section {
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+    .image {
+      width: 100%;
+      object-fit: contain;
+    }
+  
+    .texte {
+      h1 {
+        position: absolute;
+        font-size: 50px;
+        width: 40%;
+        left: 4rem;
+        top: 20%;
+        color: rgba(white, 0.95);
+        font-weight: 400;
+      }
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        width: 40%;
+        top: 40%;
+        color: white;
+        text-align: center;
+      }
+    }
+    .espace-candidat {
+      position: absolute;
+      background-color: rgba(white, 0.8);
+      border: 1px solid rgab(black, 0.4);
+      box-shadow: clr.$box-shadow-dark;
+      border-color: black;
+      border-radius: 1em;
+      max-width: 20%;
+      right: 20%;
+      top: 50%;
+      padding: 2rem;
+      text-align: center;
+      transform: translateY(-100%);
+      p {
+        padding-block: 1rem;
+      }
+      button {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: clr.$box-shadow-dark;
+        transition: all 200ms ease-in;
+        &:hover {
+          transform: translateX(1px);
+          box-shadow: none;
+        }
+      }
+    }
+    .barre-recherche {
+      position: relative;
+      width: 60%;
+      margin-inline: auto;
+      height: fit-content;
+      border-radius: 30px;
+      border: solid rgba(black, 0.2) 1px;
+      padding: 2rem;
+      bottom: 2rem;
+      box-shadow: clr.$box-shadow-dark;
+      .box {
+        width: 100%;
+        form {
+          width: 100%;
+          input[type="text"] {
+            background: #fff;
+            height: 35px;
+            outline: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            color: rgba(white, 0.8);
+            background: rgba(black, 0.8);
+            border: 1px solid rgab(black, 0.4);
+            margin-bottom: 0.5rem;
+            &::placeholder {
+              color: rgba(white, 0.75);
+            }
+          }
+        }
+        .dropdown1 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown2 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown3 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include mxn.md {
+  .hero__section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .image {
+      width: 100%;
+      object-fit: contain;
+    }
+  
+    .texte {
+      h1 {
+        position: absolute;
+        font-size: 50px;
+        width: 40%;
+        left: 4rem;
+        top: 20%;
+        color: rgba(white, 0.95);
+        font-weight: 400;
+      }
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        width: 40%;
+        top: 40%;
+        color: white;
+        text-align: center;
+      }
+    }
+    .espace-candidat {
+      position: absolute;
+      background-color: rgba(white, 0.8);
+      border: 1px solid rgab(black, 0.4);
+      box-shadow: clr.$box-shadow-dark;
+      border-color: black;
+      border-radius: 1em;
+      max-width: 20%;
+      right: 20%;
+      top: 50%;
+      padding: 2rem;
+      text-align: center;
+      transform: translateY(-100%);
+      p {
+        padding-block: 1rem;
+      }
+      button {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: clr.$box-shadow-dark;
+        transition: all 200ms ease-in;
+        &:hover {
+          transform: translateX(1px);
+          box-shadow: none;
+        }
+      }
+    }
+    .barre-recherche {
+      position: relative;
+      width: 60%;
+      margin-inline: auto;
+      height: fit-content;
+      border-radius: 30px;
+      border: solid rgba(black, 0.2) 1px;
+      padding: 2rem;
+      bottom: 2rem;
+      box-shadow: clr.$box-shadow-dark;
+      .box {
+        width: 100%;
+        form {
+          width: 100%;
+          input[type="text"] {
+            background: #fff;
+            height: 35px;
+            outline: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            color: rgba(white, 0.8);
+            background: rgba(black, 0.8);
+            border: 1px solid rgab(black, 0.4);
+            margin-bottom: 0.5rem;
+            &::placeholder {
+              color: rgba(white, 0.75);
+            }
+          }
+        }
+        .dropdown1 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown2 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown3 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include mxn.lg {
+  .hero__section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .image {
+      width: 100%;
+      object-fit: contain;
+    }
+  
+    .texte {
+      h1 {
+        position: absolute;
+        font-size: 50px;
+        width: 40%;
+        left: 4rem;
+        top: 20%;
+        color: rgba(white, 0.95);
+        font-weight: 400;
+      }
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        width: 40%;
+        top: 40%;
+        color: white;
+        text-align: center;
+      }
+    }
+    .espace-candidat {
+      position: absolute;
+      background-color: rgba(white, 0.8);
+      border: 1px solid rgab(black, 0.4);
+      box-shadow: clr.$box-shadow-dark;
+      border-color: black;
+      border-radius: 1em;
+      max-width: 20%;
+      right: 20%;
+      top: 50%;
+      padding: 2rem;
+      text-align: center;
+      transform: translateY(-100%);
+      p {
+        padding-block: 1rem;
+      }
+      button {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: clr.$box-shadow-dark;
+        transition: all 200ms ease-in;
+        &:hover {
+          transform: translateX(1px);
+          box-shadow: none;
+        }
+      }
+    }
+    .barre-recherche {
+      position: relative;
+      width: 60%;
+      margin-inline: auto;
+      height: fit-content;
+      border-radius: 30px;
+      border: solid rgba(black, 0.2) 1px;
+      padding: 2rem;
+      bottom: 2rem;
+      box-shadow: clr.$box-shadow-dark;
+      .box {
+        width: 100%;
+        form {
+          width: 100%;
+          input[type="text"] {
+            background: #fff;
+            height: 35px;
+            outline: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            color: rgba(white, 0.8);
+            background: rgba(black, 0.8);
+            border: 1px solid rgab(black, 0.4);
+            margin-bottom: 0.5rem;
+            &::placeholder {
+              color: rgba(white, 0.75);
+            }
+          }
+        }
+        .dropdown1 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown2 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown3 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include mxn.xl {
+  .hero__section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    .image {
+      width: 100%;
+      object-fit: contain;
+    }
+  
+    .texte {
+      h1 {
+        position: absolute;
+        font-size: 50px;
+        width: 40%;
+        left: 4rem;
+        top: 20%;
+        color: rgba(white, 0.95);
+        font-weight: 400;
+      }
+      h3 {
+        position: absolute;
+        font-size: 20px;
+        width: 40%;
+        top: 40%;
+        color: white;
+        text-align: center;
+      }
+    }
+    .espace-candidat {
+      position: absolute;
+      background-color: rgba(white, 0.8);
+      border: 1px solid rgab(black, 0.4);
+      box-shadow: clr.$box-shadow-dark;
+      border-color: black;
+      border-radius: 1em;
+      max-width: 20%;
+      right: 20%;
+      top: 50%;
+      padding: 2rem;
+      text-align: center;
+      transform: translateY(-100%);
+      p {
+        padding-block: 1rem;
+      }
+      button {
+        color: white;
+        background-color: black;
+        border-radius: 20px;
+        padding: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: clr.$box-shadow-dark;
+        transition: all 200ms ease-in;
+        &:hover {
+          transform: translateX(1px);
+          box-shadow: none;
+        }
+      }
+    }
+    .barre-recherche {
+      position: relative;
+      width: 60%;
+      margin-inline: auto;
+      height: fit-content;
+      border-radius: 30px;
+      border: solid rgba(black, 0.2) 1px;
+      padding: 2rem;
+      bottom: 2rem;
+      box-shadow: clr.$box-shadow-dark;
+      .box {
+        width: 100%;
+        form {
+          width: 100%;
+          input[type="text"] {
+            background: #fff;
+            height: 35px;
+            outline: none;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border: none;
+            color: rgba(white, 0.8);
+            background: rgba(black, 0.8);
+            border: 1px solid rgab(black, 0.4);
+            margin-bottom: 0.5rem;
+            &::placeholder {
+              color: rgba(white, 0.75);
+            }
+          }
+        }
+        .dropdown1 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown2 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+        .dropdown3 {
+          width: 100%;
+          overflow: hidden;
+          select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(black, 0.8);
+            color: rgba(white, 0.8);
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 .offres {
   width: 100%;
   margin-block: 10rem;
@@ -158,11 +840,216 @@ body {
       font-size: 25px;
     }
     P {
-      color: red;
+      color: green;
       font-size: 12px;
     }
   }
 }
 
+@include mxn.xs {
+  .offres {
+    width: 100%;
+    margin-block: 10rem;
+    @include mxn.flex-center(column);
+    gap: 1em;
+    .item {
+      width: 60%;
+      height: 50%;
+      padding: 10px 0 10px;
+      border: solid rgba(black, 0.3) 1px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      padding-left: 5%;
+      @include mxn.flex-center(column);
+      align-items: start;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 95%;
+        background-color: clr.$primary-bnp;
+      }
+      h5 {
+        color: #014e2b;
+      }
+      h3 {
+        color: black;
+        font-size: 8px;
+      }
+      P {
+        color: green;
+        font-size: 12px;
+      }
+    }
+  }
+  
+}
+@include mxn.sm {
+  .offres {
+    width: 100%;
+    margin-block: 10rem;
+    @include mxn.flex-center(column);
+    gap: 1em;
+    .item {
+      width: 60%;
+      height: 50%;
+      padding: 10px 0 10px;
+      border: solid rgba(black, 0.3) 1px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      padding-left: 5%;
+      @include mxn.flex-center(column);
+      align-items: start;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 95%;
+        background-color: clr.$primary-bnp;
+      }
+      h5 {
+        color: #014e2b;
+      }
+      h3 {
+        color: black;
+        font-size: 8px;
+      }
+      P {
+        color: green;
+        font-size: 12px;
+      }
+    }
+  }
+  
+}
+@include mxn.md {
+  .offres {
+    width: 100%;
+    // margin-block: 10rem;
+    @include mxn.flex-center(column);
+    gap: 1em;
+    .item {
+      width: 60%;
+      height: 40px;
+      padding: 50px 0 80px;
+      border: solid rgba(black, 0.3) 1px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      padding-left: 5%;
+      @include mxn.flex-center(column);
+      align-items: start;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 95%;
+        background-color: clr.$primary-bnp;
+      }
+      h5 {
+        color: #014e2b;
+      }
+      h3 {
+        color: black;
+        font-size: 25px;
+      }
+      P {
+        color: green;
+        font-size: 12px;
+      }
+    }
+  }
+  
+}
+@include mxn.lg {
+  .offres {
+    width: 100%;
+    margin-block: 10rem;
+    @include mxn.flex-center(column);
+    gap: 1em;
+    .item {
+      width: 60%;
+      height: 40px;
+      padding: 50px 0 80px;
+      border: solid rgba(black, 0.3) 1px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      padding-left: 5%;
+      @include mxn.flex-center(column);
+      align-items: start;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 95%;
+        background-color: clr.$primary-bnp;
+      }
+      h5 {
+        color: #014e2b;
+      }
+      h3 {
+        color: black;
+        font-size: 25px;
+      }
+      P {
+        color: green;
+        font-size: 12px;
+      }
+    }
+  }
+  
+}
+@include mxn.xl {
+  .offres {
+    width: 100%;
+    margin-block: 10rem;
+    @include mxn.flex-center(column);
+    gap: 1em;
+    .item {
+      width: 60%;
+      height: 40px;
+      padding: 50px 0 80px;
+      border: solid rgba(black, 0.3) 1px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      padding-left: 5%;
+      @include mxn.flex-center(column);
+      align-items: start;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 95%;
+        background-color: clr.$primary-bnp;
+      }
+      h5 {
+        color: #014e2b;
+      }
+      h3 {
+        color: black;
+        font-size: 25px;
+      }
+      P {
+        color: green;
+        font-size: 12px;
+      }
+    }
+  }
+  
+}
 //Footer
 @import "../components/footer";
