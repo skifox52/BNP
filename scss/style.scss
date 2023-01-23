@@ -16,6 +16,7 @@
 html {
   font-size: 16px;
   font-family: "Tajawal", sans-serif;
+  overflow-x: hidden;
 }
 body {
   position: relative;
@@ -282,11 +283,52 @@ header {
             background-image: url("/assets/header__slider/banner-visa-BNPP_1400x600-FR.jpg");
           }
         }
+        &.eone {
+          transform: rotate(5deg);
+          top: 60%;
+          @include mxn.sm {
+            top: 65%;
+          }
+
+          .img {
+            background-image: url("/assets/header__slider/e1.png");
+          }
+        }
+        &.pone {
+          transform: rotate(5deg);
+          top: 60%;
+          @include mxn.sm {
+            top: 0%;
+          }
+
+          .img {
+            background-image: url("/assets/header__slider/pro1.jpg");
+          }
+        }
+
         &.two {
           transform: rotate(5deg);
           left: 3em;
           .img {
             background-image: url("/assets/header__slider/Bannière-GAB-rechargement-crédit-mobile-2000x550px.jpg");
+          }
+        }
+        &.etwo {
+          transform: rotate(5deg);
+          left: 3em;
+          .img {
+            background-image: url("/assets/header__slider/pro1.jpg");
+          }
+        }
+        &.ptwo {
+          transform: rotate(5deg);
+          left: 3em;
+          top: 40%;
+          @include mxn.sm {
+            top: 0;
+          }
+          .img {
+            background-image: url("/assets/header__slider/pro2.jpg");
           }
         }
         &.three {
@@ -300,11 +342,41 @@ header {
             background-image: url("/assets/header__slider/Bannière-web_2000x550px.jpg");
           }
         }
+        &.ethree {
+          transform: rotate(-5deg);
+          top: 60%;
+          left: 3em;
+          @include mxn.sm {
+            top: 65%;
+          }
+          .img {
+            background-image: url("/assets/header__slider/e3.jpg");
+          }
+        }
+        &.pthree {
+          transform: rotate(-5deg);
+          top: 10%;
+          @include mxn.sm {
+            top: 65%;
+          }
+
+          .img {
+            background-image: url("/assets/header__slider/pro3.jpg");
+          }
+        }
+
         &.four {
           transform: rotate(-5deg);
           right: 3em;
           .img {
             background-image: url("/assets/header__slider/BNP_22_07_GAB_depot_banner_site_2000x550_BAT1.jpg");
+          }
+        }
+        &.efour {
+          transform: rotate(-5deg);
+          right: 3em;
+          .img {
+            background-image: url("/assets/header__slider/e4.jpg");
           }
         }
         &:hover {
@@ -496,7 +568,7 @@ header {
       }
     }
     .card__img {
-      height: 80%;
+      height: 40vh;
       border-radius: 20%;
       width: 100%;
       background-repeat: no-repeat;
@@ -512,6 +584,18 @@ header {
         background-image: url("/assets/bnp/BNP_15_05_visuel_site_immo_jeunes_750.jpg");
       }
       &.four {
+        background-image: url("/assets/bnp/BNP_15_05_visuel_site_esprit_libre_750.jpg");
+      }
+      &.pone {
+        background-image: url("/assets/bnp/pro2.jpg");
+      }
+      &.ptwo {
+        background-image: url("/assets/bnp/pro1.jpg");
+      }
+      &.pthree {
+        background-image: url("/assets/bnp/pro3.jpg");
+      }
+      &.pfour {
         background-image: url("/assets/bnp/BNP_15_05_visuel_site_esprit_libre_750.jpg");
       }
     }

@@ -1,4 +1,6 @@
 @use "../utils/colors" as clr;
+@use "../components/navbar";
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +13,6 @@ body {
   overflow-x: hidden;
 }
 //Navbar
-@import "../components/navbar";
 .texte {
   h1 {
     padding-top: 4em;

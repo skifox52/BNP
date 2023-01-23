@@ -3,21 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/svg.png" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../scss/pages/reglementation.scss" />
-    <script src="../js/searchBar.js" defer></script>
-
-    <title>RÉGLEMENTATION</title>
+    <link rel="stylesheet" href="../scss/style.scss" />
+    <title>Vite App</title>
   </head>
-
   <body>
+    <!-- Header  -->
     <header>
       <nav class="nav__bar">
         <div class="hamburger">
@@ -29,8 +26,8 @@
           <div class="hamburger__content">
             <ul>
               <li><a href="./index.html">PARTICULIERS</a></li>
-              <li><a href="./pages/professionnel.html">PROFESSIONNELS</a></li>
-              <li><a href="./pages/entreprise.html">ENTREPRISES</a></li>
+              <li><a href="./index.html">PROFESSIONNELS</a></li>
+              <li><a href="./index.html">ENTREPRISES</a></li>
               <li><a href="./pages/reglementation.html">RÉGLEMENTATION</a></li>
               <li><a href="./pages/recrutement.html">RECRUTEMENT</a></li>
             </ul>
@@ -232,8 +229,8 @@
           </div>
           <ul>
             <li><a href="./index.html">PARTICULIERS</a></li>
-            <li><a href="./pages/professionnel.html">PROFESSIONNELS</a></li>
-            <li><a href="./pages/entreprise.html">ENTREPRISES</a></li>
+            <li><a href="./index.html">PROFESSIONNELS</a></li>
+            <li><a href="./index.html">ENTREPRISES</a></li>
             <li><a href="./pages/reglementation.html">RÉGLEMENTATION</a></li>
             <li><a href="./pages/recrutement.html">RECRUTEMENT</a></li>
             <!-- <li><a href="#">PRÉ-DOMICILIATION</a></li> -->
@@ -254,162 +251,302 @@
           </div>
         </main>
       </nav>
+      <section>
+        <!-- <canvas id="logo"></canvas> -->
+        <div class="main__container">
+          <div class="logo__img">
+            <div class="btn__container">
+              <button class="connexion">
+                <a
+                  href="./pages/connexion.html"
+                  target="_blank"
+                  style="color: inherit"
+                  >Accés aux comptes</a
+                >
+              </button>
+              <button>
+                <a style="color: inherit" href="./pages/inscription.html"
+                  >Devenir client</a
+                >
+              </button>
+            </div>
+          </div>
+
+          <div class="card eone">
+            <div class="img"></div>
+            <div class="content"><button>En savoir plus ></button></div>
+          </div>
+          <div class="card etwo">
+            <div class="img"></div>
+            <div class="content"><button>En savoir plus ></button></div>
+          </div>
+          <div class="card ethree">
+            <div class="img"></div>
+            <div class="content"><button>En savoir plus ></button></div>
+          </div>
+          <div class="card efour">
+            <div class="img"></div>
+            <div class="content"><button>En savoir plus ></button></div>
+          </div>
+        </div>
+        <div class="transbar">
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM80 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H80c-8.8 0-16-7.2-16-16s7.2-16 16-16zm16 96H288c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V256c0-17.7 14.3-32 32-32zm0 32v64H288V256H96zM240 416h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+                />
+              </svg>
+              Ouvrir un compte
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"
+                />
+              </svg>
+              Choisir une carte
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M16 64C16 28.7 44.7 0 80 0H304c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H80c-35.3 0-64-28.7-64-64V64zM144 448c0 8.8 7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H160c-8.8 0-16 7.2-16 16zM304 64H80V384H304V64z"
+                />
+              </svg>
+              Gérer vos comptes a distance
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M312 24V34.5c6.4 1.2 12.6 2.7 18.2 4.2c12.8 3.4 20.4 16.6 17 29.4s-16.6 20.4-29.4 17c-10.9-2.9-21.1-4.9-30.2-5c-7.3-.1-14.7 1.7-19.4 4.4c-2.1 1.3-3.1 2.4-3.5 3c-.3 .5-.7 1.2-.7 2.8c0 .3 0 .5 0 .6c.2 .2 .9 1.2 3.3 2.6c5.8 3.5 14.4 6.2 27.4 10.1l.9 .3 0 0c11.1 3.3 25.9 7.8 37.9 15.3c13.7 8.6 26.1 22.9 26.4 44.9c.3 22.5-11.4 38.9-26.7 48.5c-6.7 4.1-13.9 7-21.3 8.8V232c0 13.3-10.7 24-24 24s-24-10.7-24-24V220.6c-9.5-2.3-18.2-5.3-25.6-7.8c-2.1-.7-4.1-1.4-6-2c-12.6-4.2-19.4-17.8-15.2-30.4s17.8-19.4 30.4-15.2c2.6 .9 5 1.7 7.3 2.5c13.6 4.6 23.4 7.9 33.9 8.3c8 .3 15.1-1.6 19.2-4.1c1.9-1.2 2.8-2.2 3.2-2.9c.4-.6 .9-1.8 .8-4.1l0-.2c0-1 0-2.1-4-4.6c-5.7-3.6-14.3-6.4-27.1-10.3l-1.9-.6c-10.8-3.2-25-7.5-36.4-14.4c-13.5-8.1-26.5-22-26.6-44.1c-.1-22.9 12.9-38.6 27.7-47.4c6.4-3.8 13.3-6.4 20.2-8.2V24c0-13.3 10.7-24 24-24s24 10.7 24 24zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"
+                />
+              </svg>
+              Emprunter
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M304 240V16.6c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16H304zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4V288L412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288H558.4z"
+                />
+              </svg>
+              épargner
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M384 480c0 11.7 3.1 22.6 8.6 32H384c-17.7 0-32-14.3-32-32V383.7c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32V480c0 17.7-14.3 32-32 32H96.1c-17.7 0-32-14.3-32-32V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L490.7 166.3C447.2 181.7 416 223.2 416 272v24.6c-19.1 11.1-32 31.7-32 55.4V480zM528 240c-17.7 0-32 14.3-32 32v48h64V272c0-17.7-14.3-32-32-32zm-80 32c0-44.2 35.8-80 80-80s80 35.8 80 80v48c17.7 0 32 14.3 32 32V480c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V352c0-17.7 14.3-32 32-32V272z"
+                />
+              </svg>
+              Protéger vos bien et vos poches
+            </p>
+          </div>
+          <div class="part">
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                  d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384v38.6C310.1 219.5 256 287.4 256 368c0 59.1 29.1 111.3 73.7 143.3c-3.2 .5-6.4 .7-9.7 .7H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zm48 384c-79.5 0-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144s-64.5 144-144 144zm16-208c0-8.8-7.2-16-16-16s-16 7.2-16 16v48H368c-8.8 0-16 7.2-16 16s7.2 16 16 16h48v48c0 8.8 7.2 16 16 16s16-7.2 16-16V384h48c8.8 0 16-7.2 16-16s-7.2-16-16-16H448V304z"
+                />
+              </svg>
+              vos formulaires
+            </p>
+          </div>
+        </div>
+      </section>
     </header>
-
-    <div class="texte">
-      <h1>FONDS DE GARANTIE DE DÉPÔTS BANCAIRES</h1>
-      <p>
-        Nous vous prions de trouver ci-joint les informations nécessaires sur le
-        système de protection des dépôts bancaires conformément à l’article 20
-        du règlement Banque d’Algérie n°20-03 du 15 mars 2020 relatif au système
-        de garantie des dépôts bancaires, publié dans le Journal Officielle de
-        la République Algérienne n° 16 en date du 24 mars 2020. Ce système est
-        destiné à protéger les déposants en cas d’indisponibilité de leurs
-        dépôts suite à la faillite d’une banque. Ce document est à titre
-        d’information : vous n’avez aucune démarche ni réponse à effectuer.
-      </p>
+    <!-- Devenir client section  -->
+    <div class="devenir__client">
+      <div class="img__container sliders">
+        <h1>POURQUOI DEVENIR CLIENT</h1>
+        <h1>BNP PARIBAS EL DJAZAÏR ?</h1>
+        <div class="img"></div>
+      </div>
+      <div class="devenir__client__content sliders">
+        <h1>
+          LES <span style="color: orange">4</span> BONNES RAISONS DE CHOISIR
+        </h1>
+        <h1>BNP PARIBAS EL DJAZAÏR</h1>
+        <ul>
+          <li>
+            <p>UN SERVICE PERSONNALISÉ</p>
+          </li>
+          <li>
+            <p>DES PRODUITS INNOVANTS</p>
+          </li>
+          <li>
+            <p>UNE BANQUE PROCHE DE VOUS</p>
+          </li>
+          <li>
+            <p>VOS PROJETS SOUTENUS</p>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <div class="tableau">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="2">
-              INFORMATIONS GÉNÉRALES SUR LA PROTECTION DES DÉPÔTS
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Objectifs du système de garantie de dépôts bancaires</td>
-            <td>
-              Il vise à indemniser les déposants en cas d’indisponibilité de
-              leurs dépôts et autres montants assimilés aux dépôts
-              remboursables.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Organisme chargé de la protection des dépôts bancaires</td>
-            <td>
-              Le Fonds de Garantie des Dépôts Bancaires (FGDB) est chargé de la
-              protection des dépôts bancaires
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              Dépôts et autres montants assimilés aux dépôts remboursables
-            </td>
-            <td>
-              Tout solde créditeur résultant de fonds laissés en compte ou de
-              fonds en situation transitoire provenant d’opérations bancaires
-              normales devant être restitués conformément aux conditions légales
-              et contractuelles applicables, notamment en matière de
-              compensation.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Plafond de la protection</td>
-            <td>
-              Le plafond d’indemnisation par déposant, est fixé à deux millions
-              de dinars algériens (2 000 000 DA)
-            </td>
-          </tr>
-
-          <tr>
-            <td>Monnaie (devise) de l’indemnisation</td>
-            <td>
-              L’indemnisation est effectuée en monnaie nationale (DA). Les
-              dépôts en devises sont convertis en monnaie nationale au cours en
-              vigueur à la date à laquelle la commission bancaire a fait
-              déclaration de l’indisponibilité des dépôts
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              Si vous avez plusieurs comptes dans plusieurs devises dans la même
-              banque
-            </td>
-            <td>
-              Le plafond s’applique à l’ensemble des dépôts d’un même déposant,
-              auprès d’une même banque, quels que soient le nombre de dépôts et
-              la devise concernée. Il s’applique au solde entre le montant du
-              dépôt et les crédits et autres montants dus à la banque par le
-              titulaire du dépôt.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Autres cas particuliers</td>
-            <td>
-              Le plafond d’indemnisation cité plus haut, s’applique au solde
-              entre le montant du dépôt unique et les crédits et les autres
-              montants dus à la banque par le titulaire du dépôt. Dans le cas où
-              le total des sommes dues par le déposant est supérieur au total de
-              son dépôt, ce dernier continue à être redevable pour la
-              différence. Lorsque le montant du dépôt unique est supérieur aux
-              crédits et autres montants dus à la banque par le déposant,
-              celui-ci est indemnisé dans la limite du plafond cité plus haut.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Le cas d’un compte joint</td>
-            <td>
-              Dans le cas où le déposant n’est pas l’ayant droit des montants
-              déposés sur le compte, c’est l’ayant droit qui bénéficie de la
-              garantie. En cas de plusieurs ayants droit, il faut tenir compte
-              de la part revenant à chacun d’eux, conformément aux dispositions
-              légales, ainsi que celles régissant la gestion des montant
-              déposés.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Mise en jeu de la garantie des dépôts</td>
-            <td>
-              La mise en jeu de la garantie des dépôts bancaires, ne peut
-              intervenir qu’en cas de cessation de paiement d’une banque.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Formalités à accomplir pour être indemnisé</td>
-            <td>
-              L’indemnisation est faite sur simple déclaration de créance du
-              déposant.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Délai d’indemnisation</td>
-            <td>
-              La société en charge de la gestion du fonds de garantie des dépôts
-              bancaires est responsable de la vérification des créances des
-              déposants et leur paiement dans un délai, maximum, de six (6)
-              mois, à compter de la date de déclaration de l’indisponibilité des
-              dépôts.
-            </td>
-          </tr>
-
-          <tr>
-            <td>Correspondant</td>
-            <td>
-              FGDB, Lot Benhaddadi Said, Villa 140, BP 159, Cheraga, Alger,<br />
-              Tél : 023 27 92 94 / 023 27 92 95 <br />
-              Fax : 023 37 92 93 <br />
-              E-mail : contact@fgdb.dz<br />
-              Site web : www.fgdb.dz
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- Notre seledtion seciton  -->
+    <div class="notre__selection">
+      <!-- <h1>NOTRE SÉLECTION</h1> -->
+      <div class="selection__card faders">
+        <div class="card__content">
+          <h2>BÂTIMENT ET TRAVAUX PUBLICS</h2>
+          <p>Découvrez toutes les offres dédiées aux BTP</p>
+        </div>
+        <div class="card__img pone"></div>
+      </div>
+      <div class="selection__card faders">
+        <div class="card__content">
+          <h2>PROFESSIONS LIBÉRALES DE SANTÉ</h2>
+          <p>Découvrez toutes les offres dédiées aux PLS</p>
+        </div>
+        <div class="card__img ptwo"></div>
+      </div>
+      <div class="selection__card faders">
+        <div class="card__content">
+          <h2>FLEXEO</h2>
+          <p>Donnez plus de liberté à vos investissements</p>
+        </div>
+        <div class="card__img pthree"></div>
+      </div>
+      <div class="selection__card faders">
+        <div class="card__content">
+          <h2>PACK ESPRIT LIBRE PRO</h2>
+          <p>Professionnels, simplifiez votre quotidien à moindre coût</p>
+        </div>
+        <div class="card__img pfour"></div>
+      </div>
     </div>
-
+    <!-- Trouver une agence  -->
+    <div class="trouver__une__agence">
+      <h1 class="appear__map">Trouver une AGENCE</h1>
+      <div id="map"></div>
+    </div>
+    <dialog class="form">
+      <form>
+        <div class="step one active">
+          <div class="form__groupe">
+            <h3>Êtes-vous client ?</h3>
+            <label for="client__oui">Oui</label>
+            <input type="radio" id="client__oui" value="Oui" name="client" />
+            <label for="client__non">Non</label>
+            <input type="radio" id="client__non" value="Non" name="client" />
+          </div>
+          <div class="form__groupe">
+            <h3>Résidence :</h3>
+            <label for="residant__algerie">En Algérie</label>
+            <input
+              type="radio"
+              id="residant__algerie"
+              value="Oui"
+              name="residant"
+            />
+            <label for="residant__etranger">A l'étranger</label>
+            <input
+              type="radio"
+              id="residant__etranger"
+              value="Non"
+              name="residant"
+            />
+          </div>
+          <div class="form__groupe">
+            <label for="civilité"> <h3>Civilité</h3></label>
+            <select id="civilité">
+              <option>M</option>
+              <option>Mme</option>
+              <option>Mlle</option>
+            </select>
+          </div>
+          <div class="form__groupe">
+            <label for="nom"> <h3>Nom</h3></label>
+            <input type="text" id="nom" placeholder="Votre nom..." />
+          </div>
+          <div class="form__groupe">
+            <label for="prenom"> <h3>Prénom</h3></label>
+            <input type="text" id="prenom" placeholder="Votre prénom..." />
+          </div>
+          <div class="form__groupe">
+            <label for="dn"> <h3>Date de naissance</h3></label>
+            <input type="date" id="dn" placeholder="Date de naissance..." />
+          </div>
+          <div class="form__groupe">
+            <label for="tel"> <h3>Téléphone Portable</h3></label>
+            <input type="tel" id="tel" placeholder="Numéro de téléphone..." />
+          </div>
+          <div class="form__groupe">
+            <label for="tel__fix"> <h3>Téléphone fixe</h3></label>
+            <input type="tel" id="tel__fix" placeholder="Numéro fix..." />
+          </div>
+          <div class="form__groupe">
+            <label for="mail"> <h3>Email</h3></label>
+            <input type="email" id="mail" placeholder="Votre adresse mail..." />
+          </div>
+          <div class="form__groupe">
+            <button class="next">SUIVANT</button>
+          </div>
+        </div>
+        <div class="step two">
+          <div class="form__groupe">
+            <label for="objet"> <h3>Objet</h3></label>
+            <select id="objet">
+              <option>Demande d'informations</option>
+              <option>Suggestion</option>
+              <option>Réclamation</option>
+            </select>
+          </div>
+          <div class="form__groupe">
+            <label for="area"> <h3>Votre message</h3></label>
+            <textarea
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Votre message..."
+            ></textarea>
+          </div>
+          <div class="form__groupe">
+            <button class="prev">Précédent</button>
+            <input type="submit" value="Envoyer" />
+          </div>
+        </div>
+      </form>
+    </dialog>
+    <div class="temoignage">
+      <div class="temtem">
+        <div class="single__tem">
+          <div class="icon"></div>
+          <div class="info">MEHDI, 28 ans</div>
+          <p>
+            Pour ma demande de crédit immobilier, ma conseillère m’appelait
+            constamment pour me situer sur l’avancement de mon dossier. C’est
+            bien de se sentir accompagné.
+          </p>
+        </div>
+        <div class="single__tem">
+          <div class="icon"></div>
+          <div class="info">MERIEM, 33 ans</div>
+          <p>
+            La qualité de service, d’écoute et de prise en charge est
+            irréprochable. Avec un emploi du temps ne me permettant pas de me
+            déplacer en agence, le Direct Call ou ma conseillère me répondent
+            par email à la moindre question.
+          </p>
+        </div>
+      </div>
+      <button class="show__modal">PRENDRE RENDEZ-VOUS</button>
+    </div>
     <footer>
       <div class="row">
         <div class="col">
@@ -458,6 +595,7 @@
             alt="linkedin"
             class="reseaux"
           />
+
           <img
             src="/assets/reseaux/twitter.svg"
             alt="twitter"
@@ -466,5 +604,7 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="../js/main.js"></script>
+    <script src="../js/hamburger.js"></script>
   </body>
 </html>
