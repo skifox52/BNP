@@ -1,135 +1,130 @@
-body{
-  margin: 5px;
-}
-//Navbar
-@import "../components/navbar";
+@use "../components/navbar";
+@use "../components/footer";
 
-// la div contenante le titre et l'image de background 
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+html {
+  font-size: 16px;
+  font-family: "Tajawal", sans-serif;
+  overflow-x: hidden;
+}
+// la div contenante le titre et l'image de background
 .imtb {
   width: 100%;
   height: 500px;
   display: flex;
   position: relative;
-  background-image: url("/assets/bnp/central1.jpeg");        
+  background-image: url("/assets/bnp/central1.jpeg");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   background-position: center;
-  h1{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #014e2b;
-}
+  h1 {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #014e2b;
+  }
 }
 
 // pour le responsive
 @media screen and (max-width: 500px) {
-  .imtb{
-
-background-image: url("/assets/bnp/central2.jpg"); //image background petit ecran
-background-position: right;}
-.imtb h1 {
-  color: white;
-  
+  .imtb {
+    background-image: url("/assets/bnp/central2.jpg"); //image background petit ecran
+    background-position: right;
+  }
+  .imtb h1 {
+    color: white;
+  }
 }
 
-  
-}
-
-
-
-//**************** le style qu'on veux appliquer plusieurs fois********************** 
-@mixin style{
-
-    display: flex;
+//**************** le style qu'on veux appliquer plusieurs fois**********************
+@mixin style {
+  display: flex;
   color: #24a18c;
   overflow: hidden;
   flex-direction: row;
   width: 100%;
   gap: 0;
-    .imr{
-      width: 50%;
-  padding: 0;
-  margin: 0;
-      img{
-        width: 100%;
-        height: 100%;
-        
+  .imr {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .text {
+    width: 50%;
+    // padding: 1rem;
+    background-color: #24a18c;
+    color: white;
+    h2 {
+      padding: 2rem;
+    }
+    p {
+      padding: 1rem;
+    }
+    a {
+      color: #014e2b;
+      text-decoration: none;
+      &:hover {
+        color: white;
       }
     }
-      .text{
-        width: 50%;
-  // padding: 1rem;
-  background-color: #24a18c;
-  color: white;
-  h2{
-    padding: 2rem;
   }
-  p{
-    padding: 1rem;
+
+  //pour le responsive
+  @media screen and (max-width: 500px) {
+    flex-direction: column-reverse;
+
+    .text {
+      width: 100%;
+      height: 100% !important;
+    }
+    .imr {
+      width: 100%;
+      height: auto;
+    }
   }
-  a{
-    color:#014e2b ;
-    text-decoration: none;
-     &:hover{
-    color:white;
 
-      }
+  // **************** on applique nos mexins et s'il ya de diffence on la remplace directement*************************
+
+  // ******** le premier contenair " BNP PARIS BAS EL DJAZAIR,LA BANQUE D'UN MONDE QUI CHANGE *****
+  .containe {
+    @include style;
   }
- 
-      }
-    
-      //pour le responsive
-    @media screen and (max-width: 500px) {
-      
-        
-        flex-direction: column-reverse;
-        
-      
-      .text{
-      
-        width: 100%;
-        height: 100% !important;
-      }
-      .imr{
-        width: 100%;
-        height: auto;
-      }
-    
 
+  // ******* le 2em contenair "ACTIVITÉS & FILIALES" ******
+  .cont {
+    @include style;
+    flex-direction: row-reverse;
+  }
+
+  // ****** le 3em contenair "LE GROUPE BNP PARIBAS" *****
+  .contine {
+    @include style;
+  }
+
+  // ***** le 4 em "COMMUNICATION FINANCIÈRE" *****
+  .contai {
+    @include style;
+    flex-direction: row-reverse;
+  }
+
+  // *****le 5em contenair " ACTUALITÉ & PRESSE" ******
+  .conai {
+    @include style;
+  }
+
+  //Footer
 }
-
-
-// **************** on applique nos mexins et s'il ya de diffence on la remplace directement************************* 
-
-// ******** le premier contenair " BNP PARIS BAS EL DJAZAIR,LA BANQUE D'UN MONDE QUI CHANGE *****
-.containe{
- @include style ;
-
-}
-
-// ******* le 2em contenair "ACTIVITÉS & FILIALES" ******
-.cont{
-  @include style;
-  flex-direction: row-reverse;
-}
-
-// ****** le 3em contenair "LE GROUPE BNP PARIBAS" *****
-.contine{
-  @include style;
-}
-
-// ***** le 4 em "COMMUNICATION FINANCIÈRE" *****
-.contai{
-  @include style;
-  flex-direction: row-reverse;
-}
-
-// *****le 5em contenair " ACTUALITÉ & PRESSE" ******
-.conai{
-  @include style;
-}
-
-//Footer
-@import "../components/footer";}
