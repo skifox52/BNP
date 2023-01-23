@@ -3,26 +3,31 @@ body{
 }
 //Navbar
 @import "../components/navbar";
+
+// la div contenante le titre et l'image de background 
 .imtb {
   width: 100%;
   height: 500px;
   display: flex;
   position: relative;
-  background-image: url("imgbnp4/instit_7_2000.jpeg");
+  background-image: url("/assets/bnp/central1.jpeg");        
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
   h1{
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #014e2b;
 }
 }
+
+// pour le responsive
 @media screen and (max-width: 500px) {
   .imtb{
 
-background-image: url("imgbnp4/326419810_5542312572565007_4104402002980087611_n.jpg");
+background-image: url("/assets/bnp/central2.jpg"); //image background petit ecran
 background-position: right;}
 .imtb h1 {
   color: white;
@@ -31,6 +36,9 @@ background-position: right;}
 
   
 }
+
+
+
 //**************** le style qu'on veux appliquer plusieurs fois********************** 
 @mixin style{
 
@@ -72,56 +80,56 @@ background-position: right;}
  
       }
     
-   
+      //pour le responsive
     @media screen and (max-width: 500px) {
-      .containe{
+      
         
         flex-direction: column-reverse;
         
-      }
-      .containe .text{
+      
+      .text{
       
         width: 100%;
         height: 100% !important;
       }
-      .containe .imr{
+      .imr{
         width: 100%;
         height: auto;
       }
     
-}
 
 }
+
 
 // **************** on applique nos mexins et s'il ya de diffence on la remplace directement************************* 
 
-// ******** la premiere div *****
+// ******** le premier contenair " BNP PARIS BAS EL DJAZAIR,LA BANQUE D'UN MONDE QUI CHANGE *****
 .containe{
  @include style ;
 
 }
 
-// ******* la deuxieme div ******
+// ******* le 2em contenair "ACTIVITÉS & FILIALES" ******
 .cont{
   @include style;
   flex-direction: row-reverse;
 }
 
-// ****** la troisieme div *****
+// ****** le 3em contenair "LE GROUPE BNP PARIBAS" *****
 .contine{
   @include style;
 }
 
-// ***** la quatrieme div *****
+// ***** le 4 em "COMMUNICATION FINANCIÈRE" *****
 .contai{
   @include style;
   flex-direction: row-reverse;
 }
 
-// *****la cinquieme ******
+// *****le 5em contenair " ACTUALITÉ & PRESSE" ******
 .conai{
   @include style;
 }
 
 //Footer
-@import "../components/footer";
+@import "../components/footer";}
